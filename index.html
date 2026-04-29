@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Enablement for Dymon Asia</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #123265;
+  --navy2: #304564;
+  --ink: #182235;
+  --slate: #4f5d72;
+  --muted: #7b8798;
+  --line: #d8dee8;
+  --line2: #e9edf4;
+  --paper: #f8f6f0;
+  --white: #ffffff;
+  --gold: #b49a5a;
+  --gold2: #eadfbd;
+  --red: #a34838;
+  --green: #2f6c58;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.deck { width: 100vw; height: 100vh; position: relative; overflow: hidden; background: var(--paper); }
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 42px 64px 54px;
+  opacity: 0;
+  transform: translateX(22px);
+  transition: opacity .26s ease, transform .26s ease;
+  pointer-events: none;
+  overflow: hidden;
+}
+.slide.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+.slide.exiting { opacity: 0; transform: translateX(-22px); }
+html.booting .slide { transition: none !important; }
+#prog { position: fixed; bottom: 0; left: 0; height: 3px; background: var(--gold); z-index: 20; transition: width .26s ease; }
+#counter { position: fixed; right: 26px; bottom: 18px; font-size: 11px; color: var(--muted); letter-spacing: .08em; z-index: 20; }
+#hint { position: fixed; left: 26px; bottom: 18px; font-size: 11px; color: #a2aab8; z-index: 20; }
+.topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  min-height: 36px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 13px;
+}
+.eyebrow {
+  font-size: 11px;
+  color: var(--navy2);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.logo { height: 31px; width: auto; object-fit: contain; }
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 360px;
+}
+.brand-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+}
+.brand-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+.brand-logo.dymon { height: 25px; }
+.brand-logo.superlinear { height: 27px; transform: translateY(1px); }
+.brand-x {
+  color: var(--gold);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+h1, h2, h3 { color: var(--navy); }
+h1 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 64px;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+h2 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  max-width: 1120px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 1.24;
+  font-weight: 700;
+}
+p, li {
+  font-size: 17px;
+  line-height: 1.46;
+  color: var(--slate);
+}
+.sub {
+  margin-top: 14px;
+  max-width: 860px;
+  font-size: 20px;
+  line-height: 1.42;
+  color: var(--slate);
+}
+.small { font-size: 12px; line-height: 1.45; color: var(--muted); }
+.caption { font-size: 11px; line-height: 1.35; color: var(--muted); margin-top: 8px; }
+.content { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.center { align-items: center; justify-content: center; text-align: center; }
+.left-center { justify-content: center; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: stretch; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.mt16 { margin-top: 16px; }
+.mt20 { margin-top: 20px; }
+.mt24 { margin-top: 24px; }
+.mt30 { margin-top: 30px; }
+.mt36 { margin-top: 36px; }
+.mt44 { margin-top: 44px; }
+.rule { width: 72px; height: 3px; background: var(--gold); margin: 22px 0 18px; }
+.portrait-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  align-items: center;
+  border-top: 3px solid var(--gold);
+  background: var(--white);
+  padding: 22px 24px;
+}
+.portrait-card img {
+  width: 150px;
+  height: 190px;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+.cover {
+  background: linear-gradient(90deg, rgba(18,50,101,.97), rgba(18,50,101,.92)), url("assets/doordash_audiences.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.cover .topline { border-color: rgba(255,255,255,.22); }
+.cover h1 { color: white; max-width: 980px; font-size: 70px; }
+.cover .sub { color: rgba(255,255,255,.82); max-width: 780px; }
+.cover-meta { margin-top: auto; color: rgba(255,255,255,.74); font-size: 13px; letter-spacing: .04em; }
+.cover .logo, .cover .brand-logo { filter: brightness(0) invert(1); opacity: .94; }
+.cover .brand-x { color: rgba(255,255,255,.72); }
+.section {
+  background: var(--navy);
+  color: white;
+}
+.section h2 { color: white; font-size: 56px; }
+.section .sub, .section p { color: rgba(255,255,255,.76); }
+.section .topline { border-color: rgba(255,255,255,.22); }
+.section .eyebrow { color: var(--gold2); }
+.section .logo, .section .brand-logo { filter: brightness(0) invert(1); opacity: .9; }
+.section .brand-x { color: rgba(255,255,255,.72); }
+.kpi {
+  border-top: 2px solid var(--gold);
+  padding-top: 14px;
+}
+.kpi .num {
+  font-family: "EB Garamond", Georgia, serif;
+  color: var(--navy);
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 700;
+}
+.kpi .lbl { margin-top: 8px; color: var(--slate); font-size: 13px; line-height: 1.35; }
+.panel {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 22px 24px;
+  min-height: 120px;
+}
+.panel.gold { border-top: 4px solid var(--gold); }
+.panel.navy { border-top: 4px solid var(--navy); }
+.panel.green { border-top: 4px solid var(--green); }
+.panel.red { border-top: 4px solid var(--red); }
+.panel h3 { margin-bottom: 10px; }
+.panel p { font-size: 16px; }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-top: 2px solid var(--navy);
+}
+.table th {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--navy2);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 14px;
+}
+.table td {
+  border-bottom: 1px solid var(--line2);
+  padding: 14px;
+  vertical-align: top;
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.38;
+}
+.table td strong { color: var(--ink); }
+.table .hi { color: var(--navy); font-weight: 700; }
+.quote {
+  border-left: 4px solid var(--gold);
+  padding-left: 22px;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 34px;
+  line-height: 1.18;
+  color: var(--navy);
+  max-width: 980px;
+}
+.image-box {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.image-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  display: block;
+}
+.photo-box img { object-fit: cover; }
+.visual-shot {
+  min-height: 360px;
+}
+.visual-shot img {
+  object-fit: contain;
+  background: #111827;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 36px;
+  align-items: center;
+}
+.flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+.flow .step {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 16px;
+  min-height: 116px;
+}
+.step .n {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.step strong { display: block; color: var(--navy); font-size: 18px; line-height: 1.18; margin-bottom: 8px; }
+.step span { color: var(--slate); font-size: 14px; line-height: 1.35; }
+.matrix {
+  display: grid;
+  grid-template-columns: 180px repeat(3, 1fr);
+  border-top: 2px solid var(--navy);
+  background: white;
+}
+.matrix > div { padding: 16px; border-right: 1px solid var(--line2); border-bottom: 1px solid var(--line2); min-height: 72px; }
+.matrix .head { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--navy2); font-weight: 700; }
+.matrix .rowh { color: var(--navy); font-weight: 700; }
+.matrix .good { background: #fbf8ee; color: var(--navy); font-weight: 700; }
+.source {
+  position: absolute;
+  left: 64px;
+  bottom: 26px;
+  right: 160px;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+.footnote {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+.mini-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mini-list li {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 10px;
+}
+.mini-list li::before { content: ""; width: 7px; height: 7px; background: var(--gold); border-radius: 50%; margin-top: 9px; }
+.case-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+.case-title h2 { font-size: 38px; }
+.badge {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--navy);
+  background: #fbf8ee;
+  padding: 5px 9px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.takeaway {
+  margin-top: 22px;
+  border-left: 4px solid var(--gold);
+  padding: 12px 16px;
+  background: rgba(180,154,90,.08);
+  color: var(--navy);
+  font-size: 17px;
+  line-height: 1.38;
+  font-weight: 700;
+}
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.compare .panel { min-height: 350px; }
+.bigline {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 52px;
+  color: var(--navy);
+  line-height: 1.08;
+  max-width: 1040px;
+}
+.agenda {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-top: 2px solid var(--navy);
+}
+.agenda-row {
+  display: grid;
+  grid-template-columns: 80px 280px 1fr;
+  gap: 18px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--line2);
+  align-items: baseline;
+}
+.agenda-row .time { color: var(--gold); font-weight: 700; }
+.agenda-row .topic { color: var(--navy); font-weight: 700; }
+.agenda-row .desc { color: var(--slate); font-size: 15px; }
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.proof-strip .proof {
+  border-top: 2px solid var(--gold);
+  padding-top: 12px;
+}
+.proof .who { color: var(--navy); font-weight: 700; font-size: 15px; line-height: 1.25; }
+.proof .role { color: var(--muted); font-size: 12px; line-height: 1.35; margin-top: 3px; }
+.proof .words { color: var(--slate); font-size: 13px; line-height: 1.38; margin-top: 9px; }
+.course-arc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.course-stage {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+  padding: 20px;
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+}
+.course-stage .session {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.course-stage h3 { font-size: 24px; margin-bottom: 12px; }
+.course-stage p { font-size: 15px; }
+.course-stage .homework {
+  margin-top: auto;
+  border-top: 1px solid var(--line2);
+  padding-top: 12px;
+  color: var(--navy);
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+  background: var(--white);
+  border-top: 2px solid var(--navy);
+  padding: 20px 22px;
+}
+.asset {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.asset .mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fbf8ee;
+  border: 1px solid var(--gold);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+.asset strong { color: var(--navy); font-size: 16px; line-height: 1.25; }
+.asset span { color: var(--slate); font-size: 14px; line-height: 1.35; display: block; margin-top: 3px; }
+.excel-stack {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 34px;
+  align-items: start;
+}
+.excel-number {
+  font-family: "EB Garamond", Georgia, serif;
+  color: var(--gold);
+  font-size: 132px;
+  line-height: .82;
+  font-weight: 700;
+}
+.excel-label {
+  color: var(--navy);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 16px;
+}
+@media (max-width: 860px) {
+  body { overflow: auto; }
+  .deck { height: auto; overflow: visible; }
+  .slide { position: relative; min-height: 100vh; display: none; padding: 30px 22px 60px; transform: none; }
+  .slide.active { display: flex; }
+  h1 { font-size: 44px; }
+  h2 { font-size: 34px; }
+  .grid2, .grid3, .grid4, .grid5, .two-col, .compare, .flow, .proof-strip, .course-arc, .asset-grid, .excel-stack { grid-template-columns: 1fr; }
+  .matrix { grid-template-columns: 1fr; }
+  .agenda-row { grid-template-columns: 1fr; gap: 4px; }
+  #hint { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<section class="slide cover active">
+  <div class="topline">
+    <div class="eyebrow" style="color:rgba(255,255,255,.78)">AI Enablement Briefing</div>
+    <div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div>
+  </div>
+  <div class="content left-center">
+    <h1>AI Enablement for Investment Research</h1>
+    <p class="sub">From chatbot usage to agentic research workflows, context infrastructure, and PM-level judgment systems.</p>
+  </div>
+  <div class="cover-meta">Prepared for Dymon Asia · v11 course briefing</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Executive thesis</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Most AI usage today is constrained by the wrong operating model.</h2>
+  <div class="grid3 mt36">
+    <div class="panel navy"><h3>Chatbot mode</h3><p>AI answers. Human verifies, moves context, executes, and starts over in the next session.</p></div>
+    <div class="panel gold"><h3>Agentic mode</h3><p>AI works inside an environment: files, data, browser, code execution, errors, citations, and persistent artifacts.</p></div>
+    <div class="panel green"><h3>Research implication</h3><p>The leverage is not more summaries. It is the ability to convert repeated research judgment into reusable workflows.</p></div>
+  </div>
+  <div class="takeaway">Core claim: stop using AI as an answer box; start using it as an interface for building research workflows.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">What this session is for</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The objective is a precise mental model, not AI enthusiasm.</h2>
+  <table class="table mt30">
+    <thead><tr><th>Question</th><th>What the session should resolve</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Why does ChatGPT feel impressive but operationally shallow?</strong></td><td>The chat window keeps the human in the feedback loop and prevents context and output from compounding.</td></tr>
+      <tr><td><strong>What is different about agentic AI?</strong></td><td>It can use tools, inspect intermediate state, debug, retry, and leave reusable assets behind.</td></tr>
+      <tr><td><strong>Why does this matter to portfolio managers?</strong></td><td>Investment edge comes from differentiated judgment, not access to more undifferentiated information.</td></tr>
+      <tr><td><strong>What should Dymon build first?</strong></td><td>Start with individual PM workflows, then abstract the common infrastructure into a team layer.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Demo kickoff</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Before the argument starts, the room gives us one live research question.</h2>
+  <div class="grid3 mt30">
+    <div class="panel navy"><h3>Ask</h3><p>Pick a current market, company, theme, or risk that is worth a PM's attention this week.</p></div>
+    <div class="panel gold"><h3>Kick off</h3><p>Start ChatGPT Pro + Deep Research and an agentic research workflow in parallel for 10-15 minutes.</p></div>
+    <div class="panel green"><h3>Return</h3><p>Later we inspect what each run produced: evidence, gaps, calculations, artifacts, and decision usefulness.</p></div>
+  </div>
+  <div class="takeaway">You should see the difference as work happens: one run returns an answer; the other run tries to build a small research system we can inspect and reuse.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">About Superlinear</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="grid2">
+    <div>
+      <h2>Superlinear teaches AI as a craft of building, not a catalog of tools.</h2>
+      <p class="sub">My background sits at the intersection this room cares about: Cornell economics PhD, experimentation and growth data science, former Principal Data Scientist and Evangelist at Statsig, and now Superlinear Academy. The course comes from watching thousands of operators move from impressive demos to durable work systems.</p>
+      <div class="grid3 mt36">
+        <div class="kpi"><div class="num">3,000+</div><div class="lbl">paid students across AI Builders cohorts</div></div>
+        <div class="kpi"><div class="num">4.9</div><div class="lbl">Maven course rating</div></div>
+        <div class="kpi"><div class="num">300K+</div><div class="lbl">AI, data, and builder audience across platforms</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="image-box photo-box"><img src="assets/doordash_audiences.jpg" alt="Superlinear enterprise training audience"><div class="caption">Enterprise AI training audience. The emphasis is on operator-level workflow change, not prompt tips.</div></div>
+      <div class="proof-strip mt20">
+        <div class="proof"><div class="who">JPMorgan Chase</div><div class="role">Quant Researcher</div><div class="words">Built a daily-use application they did not expect to build so easily.</div></div>
+        <div class="proof"><div class="who">TikTok</div><div class="role">Strategy Ops Manager</div><div class="words">Valued the frameworks for thinking about building with AI, technical or not.</div></div>
+        <div class="proof"><div class="who">Oracle</div><div class="role">Sr. Principal TPM</div><div class="words">Described the course as training both practical skill and builder mindset.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Narrative map</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The argument starts with a live question, then moves from paradigm shift to desk-level implementation.</h2>
+  <div class="agenda mt30">
+    <div class="agenda-row"><div class="time">0</div><div class="topic">Demo kickoff</div><div class="desc">The room supplies a live research question; two AI workflows start running immediately.</div></div>
+    <div class="agenda-row"><div class="time">1</div><div class="topic">Paradigm shift</div><div class="desc">Natural language is the third interface to compute; chatbot usage misses that shift.</div></div>
+    <div class="agenda-row"><div class="time">2</div><div class="topic">Evidence</div><div class="desc">Cursor and Anthropic show the AI-native curve; Goldman, Shopify, and Block show incumbents and operators beginning to absorb the shift.</div></div>
+    <div class="agenda-row"><div class="time">3</div><div class="topic">Investment translation</div><div class="desc">PM edge is the transformation from information to differentiated judgment and position sizing.</div></div>
+    <div class="agenda-row"><div class="time">4</div><div class="topic">Demo debrief</div><div class="desc">Return to the same question and compare answer quality, workflow discipline, and reusable artifacts.</div></div>
+    <div class="agenda-row"><div class="time">5</div><div class="topic">Course architecture</div><div class="desc">The proposed course carries one real investment task through three upgrades: usable research, reusable context, and periodic workflow.</div></div>
+  </div>
+</section>
+
+<section class="slide section">
+  <div class="topline"><div class="eyebrow">Part I</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="content left-center">
+    <h2>AI is not primarily a better chatbot. It is a new interface to compute.</h2>
+    <p class="sub">That distinction is the foundation for everything that follows.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Paradigm shift setup</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="two-col">
+    <div>
+      <h2>Bill Gates says he has seen two revolutionary technologies in his lifetime. What was the first?</h2>
+      <p class="sub">AI is the second. Before the next slide, take a guess. It was not the internet, mobile, or cloud.</p>
+      <div class="takeaway">The answer matters because it explains why AI is not just another tool category.</div>
+    </div>
+    <div class="image-box"><img src="assets/gates-age-of-ai.png" alt="Bill Gates article screenshot"><div class="caption">GatesNotes, "The Age of AI has begun", March 2023.</div></div>
+  </div>
+  <div class="source">Source: Bill Gates, GatesNotes, "The Age of AI has begun", March 21, 2023.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">The reveal</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>GUI mattered because it changed who could operate compute.</h2>
+  <div class="grid2 mt30">
+    <div class="panel navy">
+      <h3>Before GUI</h3>
+      <p>Computing power was gated by command-line fluency and programming capability. Generality existed, but access was narrow.</p>
+    </div>
+    <div class="panel gold">
+      <h3>After GUI</h3>
+      <p>The mouse, windows, and icons made specific computing tasks accessible to non-programmers.</p>
+    </div>
+  </div>
+  <div class="quote mt36">Now AI gives us the third interface: natural language as a way to operate general-purpose compute.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Three interfaces</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Natural language fills the missing cell: general-purpose compute with a low starting barrier.</h2>
+  <div class="matrix mt30">
+    <div class="head">Interface</div><div class="head">What it can address</div><div class="head">Learning curve</div><div class="head">Constraint</div>
+    <div class="rowh">GUI</div><div>Specific tasks</div><div>Easy</div><div>Only what the interface designer exposed</div>
+    <div class="rowh">Programming</div><div>General tasks</div><div>Hard</div><div>Requires technical fluency</div>
+    <div class="rowh good">Natural language</div><div class="good">General tasks</div><div class="good">Easy to start; hard to wield well</div><div class="good">Requires context, tools, and verification</div>
+  </div>
+  <div class="takeaway">This is why "stop using ChatGPT" is not anti-ChatGPT. It is a correction of the interface model.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">The missing operating model</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>A new interface does not create productivity if the work remains designed around the old interface.</h2>
+  <div class="grid2 mt30">
+    <div class="image-box photo-box"><img src="assets/red-flag-act.jpg" alt="Red Flag Act image"><div class="caption">Red Flag Act analogy: if the human must walk in front of the machine, the machine cannot express its speed.</div></div>
+    <div class="image-box photo-box"><img src="assets/line-shaft-factory.jpg" alt="Line shaft factory"><div class="caption">Electric motor analogy: early factories had to redesign work, not merely replace a power source.</div></div>
+  </div>
+  <div class="takeaway">Chatbot workflows often keep the human as the red-flag man: carrying context, running work, and bringing errors back to the model.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Chat as ceiling</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>ChatGPT usage fails to compound along three operational dimensions.</h2>
+  <div class="grid3 mt30">
+    <div class="panel red"><h3>1. Feedback loop</h3><p>The model answers. The human executes, observes failure, and manually carries the error back.</p></div>
+    <div class="panel red"><h3>2. Context supply</h3><p>Each conversation depends on the human re-briefing goals, constraints, prior decisions, and quality standards.</p></div>
+    <div class="panel red"><h3>3. Asset retention</h3><p>The output is often a disposable answer, not a reusable file, script, test, checklist, or research skill.</p></div>
+  </div>
+  <table class="table mt30">
+    <tbody>
+      <tr><td><strong>Result</strong></td><td>The human becomes middleware. The system looks intelligent but remains operationally shallow.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Agentic operating model</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Agentic AI is a closed-loop workflow, not a longer prompt.</h2>
+  <div class="flow mt36">
+    <div class="step"><div class="n">01</div><strong>Specify</strong><span>Define the research question, scope, and success criterion.</span></div>
+    <div class="step"><div class="n">02</div><strong>Gather</strong><span>Search sources, read documents, pull data, and record provenance.</span></div>
+    <div class="step"><div class="n">03</div><strong>Execute</strong><span>Run code, transformations, screens, or calculations in an environment.</span></div>
+    <div class="step"><div class="n">04</div><strong>Inspect</strong><span>Read errors, check outputs, validate citations, and identify gaps.</span></div>
+    <div class="step"><div class="n">05</div><strong>Persist</strong><span>Leave behind a memo, dataset, script, test, or reusable skill.</span></div>
+  </div>
+  <div class="takeaway">The human role shifts from operator to specifier, reviewer, and judge.</div>
+</section>
+
+<section class="slide section">
+  <div class="topline"><div class="eyebrow">Part II</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="content left-center">
+    <h2>AI-native firms show the steep curve. Incumbents show the adoption path.</h2>
+    <p class="sub">The point is not to celebrate one success story. The point is to read the pattern: Silicon Valley is redesigning workflows first; traditional firms are now learning how to govern and absorb the same shift.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">AI-native signal 1 · Cursor / Anysphere</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Cursor shows what happens when an AI-native workflow becomes the default operating layer.</h2>
+  <table class="table mt26">
+    <thead><tr><th>Milestone</th><th>Reported ARR / valuation</th><th>Why it matters</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Jan 2025</strong></td><td class="hi">$100M ARR</td><td>Reached a scale prior SaaS category leaders took materially longer to achieve.</td></tr>
+      <tr><td><strong>Jun 2025</strong></td><td class="hi">$500M ARR; $9.9B valuation</td><td>Enterprise and individual developer adoption moved in parallel.</td></tr>
+      <tr><td><strong>Nov 2025</strong></td><td class="hi">$1B+ ARR; $29.3B valuation</td><td>AI-native workflow products compressed the traditional B2B growth curve.</td></tr>
+      <tr><td><strong>2026 reports</strong></td><td class="hi">$2B ARR; $50B talks</td><td>The market is pricing workflow capture, not merely seat-based software.</td></tr>
+    </tbody>
+  </table>
+  <div class="takeaway">The strategic signal is not valuation. It is the speed at which an AI workflow can become the everyday environment for a high-value profession.</div>
+  <div class="source">Sources: TechCrunch, CNBC, The Next Web, SaaStr reporting summarized in the supplied case dossier.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">AI-native signal 2 · Anthropic / Claude</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The strongest AI users have moved past "can AI code?" They are changing what it means to code.</h2>
+  <div class="grid3 mt30">
+    <div class="panel navy"><h3>AI now writes large portions of production code</h3><p>Leaders at Anthropic and OpenAI have publicly described AI writing a very large share of their own code, especially in AI-native teams.</p></div>
+    <div class="panel gold"><h3>The best users stop treating AI as autocomplete</h3><p>They specify the task, let the agent work, review the diff, tighten tests, and preserve the learning in the repo or workflow.</p></div>
+    <div class="panel green"><h3>The gap is mastery, not model access</h3><p>Weaker users do not merely use AI as a chatbox. They lack the craft: how to specify, decompose, inspect, test, and iterate with the model.</p></div>
+  </div>
+  <div class="quote mt30">Senior-engineer-level coding output is no longer locked behind being a senior engineer; it is unlocked by specification, review, iteration, and taste.</div>
+  <div class="takeaway">This is why the course matters: our strongest students already internalize the method. Jay's own workflow shows why this is accessible even to business people without a coding background; the course architecture makes that path explicit.</div>
+  <div class="source">Sources: Anthropic Research; The Pragmatic Engineer coverage of Claude Code; Lenny's Podcast interview with the Claude Code team; public commentary from Andrej Karpathy.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Our claim · Verbs, not nouns</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Real AI mastery is learned as verbs, not nouns.</h2>
+  <div class="compare mt30">
+    <div class="panel red">
+      <h3>Noun learning</h3>
+      <p>Model names, tools, features, RAG, MCP, agents, benchmarks. Useful vocabulary, but not yet a craft.</p>
+      <ul class="mini-list mt20"><li>Can sound current in meetings</li><li>Often becomes tool-chasing</li><li>Does not reliably change output quality</li></ul>
+    </div>
+    <div class="panel green">
+      <h3>Verb learning</h3>
+      <p>Specify, decompose, delegate, inspect, test, revise, document, reuse. This is where the capability actually lives.</p>
+      <ul class="mini-list mt20"><li>Turns AI from answer box into worker</li><li>Creates reusable assets and judgment systems</li><li>Transfers across models and tools</li></ul>
+    </div>
+  </div>
+  <div class="takeaway">Investing is the same. The nouns are factors, sectors, metrics, and frameworks; the edge lives in the verbs: weigh evidence, form a variant view, size risk, monitor catalysts, and revise.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Incumbent signal · Goldman Sachs</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="case-title"><h2>Goldman is not the whole success story. It is the regulated-incumbent adoption signal.</h2><span class="badge">What we learned</span></div>
+  <div class="grid3">
+    <div class="kpi"><div class="num">12,000</div><div class="lbl">human developers in Goldman's engineering organization</div></div>
+    <div class="kpi"><div class="num">100s → 1000s</div><div class="lbl">potential scale of Devin agents cited by CIO Marco Argenti</div></div>
+    <div class="kpi"><div class="num">Regulated</div><div class="lbl">a harder operating context than an AI-native startup or software lab</div></div>
+  </div>
+  <table class="table mt30">
+    <thead><tr><th>What we learned</th><th>Why it matters to Dymon</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Incumbents move slower, but the baseline is changing</strong></td><td>When a compliance-bound Wall Street firm pilots autonomous engineers, the question shifts from "is this too early?" to "how do we govern it?"</td></tr>
+      <tr><td><strong>The real enterprise problem is supervision</strong></td><td>Access, permissions, review, rollback, provenance, and accountability matter more than the tool name.</td></tr>
+      <tr><td><strong>Research workflows have the same shape</strong></td><td>A PM workflow also needs specification, source hierarchy, execution, verification, and persistent artifacts.</td></tr>
+    </tbody>
+  </table>
+  <div class="source">Sources: CNBC, July 11, 2025; Cognition AI corporate blog, September 8, 2025.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">What to copy, what not to copy</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Borrow Silicon Valley's workflow speed and finance's governance discipline.</h2>
+  <div class="compare mt30">
+    <div class="panel green"><h3>AI-native companies</h3><p>Cursor, Claude Code, and similar workflows show what happens when the work is designed around agents from the beginning.</p><ul class="mini-list mt20"><li>Workflow first</li><li>Fast feedback loops</li><li>Artifacts become reusable by default</li></ul></div>
+    <div class="panel navy"><h3>Existing incumbents</h3><p>Goldman-style adoption shows the second half of the problem: making agentic work safe enough for regulated, high-stakes environments.</p><ul class="mini-list mt20"><li>Governance first</li><li>Explicit review paths</li><li>Permissioned access and auditability</li></ul></div>
+  </div>
+  <div class="takeaway">For Dymon, the synthesis is not "copy Goldman." It is: redesign the research workflow with AI-native speed, then wrap it in finance-grade source discipline and review.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Industry signal · Shopify</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Shopify converted AI usage from optional experimentation into an organizational expectation.</h2>
+  <div class="grid2 mt30">
+    <div class="panel navy">
+      <h3>CEO mandate</h3>
+      <p>Teams must consider whether their work can be done with AI before asking for incremental headcount or resources.</p>
+    </div>
+    <div class="panel gold">
+      <h3>Performance system</h3>
+      <p>AI proficiency became part of the formal performance expectation, including for leaders.</p>
+    </div>
+  </div>
+  <div class="quote mt36">The management question changes from "who needs more people?" to "what would this team look like if AI teammates were already part of it?"</div>
+  <div class="source">Sources: TechCrunch and CNBC reporting on Tobi Lutke's March 2025 memo.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Radical signal · Block</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Block is trying to replace hierarchy with an intelligence layer.</h2>
+  <div class="grid3 mt30">
+    <div class="panel red"><h3>40% smaller</h3><p>Block has reportedly cut roughly 40% of its workforce since early 2024. The deeper signal is not headcount; it is organizational redesign.</p></div>
+    <div class="panel navy"><h3>World model of the company</h3><p>Dorsey and Botha describe moving from hierarchy as information routing to shared company and customer world models that intelligence tools can read and update.</p></div>
+    <div class="panel gold"><h3>Edge roles replace middle routing</h3><p>Managers shift from command chains toward mentors, guides, and domain experts at the edge, while the intelligence layer handles more coordination and context flow.</p></div>
+  </div>
+  <div class="takeaway">Get on board. We must act now. The risk is not moving too early; the risk is treating a paradigm shift like a software rollout instead of an operating-model redesign.</div>
+  <div class="source">Sources: Block, "From Hierarchy to Intelligence", March 31, 2026; Fortune, Axios, and AP reporting on Block workforce reduction.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Synthesis</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>These are not success stories to copy. They are signals of where the operating curve is bending.</h2>
+  <table class="table mt30">
+    <thead><tr><th>Signal</th><th>What changed</th><th>Why it matters to Dymon</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Cursor</strong></td><td>AI-native workflow becomes the work environment</td><td>The biggest gains first appear where the job itself is redesigned around agents.</td></tr>
+      <tr><td><strong>Anthropic / Claude</strong></td><td>Frontier-model company measures its own agentic work</td><td>Silicon Valley is not just talking about adoption; it is instrumenting workflow change.</td></tr>
+      <tr><td><strong>Goldman</strong></td><td>Regulated incumbent begins agent supervision</td><td>The slower enterprise path is starting to move from experimentation into governed deployment.</td></tr>
+      <tr><td><strong>Shopify</strong></td><td>AI as management baseline</td><td>Other industries are beginning to make AI capability part of resource allocation and performance expectations.</td></tr>
+      <tr><td><strong>Block</strong></td><td>AI-native reorganization pressure</td><td>The most aggressive operators are changing org design, not just tooling.</td></tr>
+    </tbody>
+  </table>
+  <div class="takeaway">The gap will not open at the speed of ordinary enterprise software adoption. It will open at the speed of workflow and organization redesign.</div>
+</section>
+
+<section class="slide section">
+  <div class="topline"><div class="eyebrow">Part III</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="content left-center">
+    <h2>The investment translation: AI must support judgment, not just information retrieval.</h2>
+    <p class="sub">For portfolio managers, the bottleneck is rarely access to text. It is transforming noisy information into differentiated, tradeable judgment.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Investment work, mechanically</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>A PM is not paid to know what the market can already know.</h2>
+  <div class="flow mt36">
+    <div class="step"><div class="n">Input</div><strong>Information</strong><span>Filings, calls, expert inputs, market data, news, positioning, primary data.</span></div>
+    <div class="step"><div class="n">Filter</div><strong>Signal</strong><span>What matters now, what is stale, what is ignored, what is over-weighted.</span></div>
+    <div class="step"><div class="n">Model</div><strong>Mechanism</strong><span>Why the economic outcome should differ from consensus.</span></div>
+    <div class="step"><div class="n">Decision</div><strong>Judgment</strong><span>Variant view, confidence, timing, sizing, and risk.</span></div>
+    <div class="step"><div class="n">Action</div><strong>Position</strong><span>A bet that can be monitored, revised, and exited.</span></div>
+  </div>
+  <div class="takeaway">AI that only summarizes information operates at the least scarce part of the chain.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">A finance education reflection</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The common misread of efficient markets is that shared information eliminates edge.</h2>
+  <div class="grid2 mt30">
+    <div class="panel navy"><h3>The clean textbook version</h3><p>If all relevant information is quickly reflected in price, then incremental information alone should not create durable alpha.</p></div>
+    <div class="panel gold"><h3>The practical version</h3><p>Market participants may see similar information, but they do not form the same beliefs, scenarios, timing, sizing, or action thresholds.</p></div>
+  </div>
+  <div class="takeaway">The edge lives in the transformation layer: information into perspective, perspective into judgment, judgment into a bet.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Contrarian view</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Best practice is the efficient market. You get paid for being right when consensus is wrong.</h2>
+  <div class="grid2 mt30">
+    <div>
+      <div class="quote" style="font-size:30px;">The valuable skill is not knowing the center of the distribution. It is knowing when the tail is real.</div>
+      <div class="panel gold mt24">
+        <h3>Naval's useful distinction</h3>
+        <p>A contrarian is not someone who reflexively disagrees. The valuable version is independent reasoning from the ground up, under pressure to conform.</p>
+      </div>
+      <div class="panel navy mt16">
+        <h3>Why this matters to PM work</h3>
+        <p>Deep Research can summarize consensus better than most humans. Useful, but not sufficient.</p>
+        <ul class="mini-list mt20">
+          <li>Know the best practice and consensus model</li>
+          <li>Find the correct contrarian view</li>
+          <li>Turn it into a tradeable decision</li>
+        </ul>
+      </div>
+    </div>
+    <div class="image-box visual-shot"><img src="assets/how-contrarians-think.png" alt="How Contrarians Think screenshot from NFX"><div class="caption">Contrarian thinking is not random disagreement. It is the disciplined search for the rare case where consensus is wrong.</div></div>
+  </div>
+  <div class="takeaway">AI should help you test and sharpen a variant view, not average it back into consensus.</div>
+  <div class="source">Sources: AI Builders Module 4; NFX, "How Contrarians Think".</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Where the edge lives</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Contrarian view is not disagreement for its own sake. It is a structured difference in how evidence is processed.</h2>
+  <table class="table mt30">
+    <thead><tr><th>Layer</th><th>Consensus behavior</th><th>PM edge</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Source weighting</strong></td><td>All credible sources are summarized with similar tone.</td><td>Know which source type deserves weight in this situation.</td></tr>
+      <tr><td><strong>Mechanism</strong></td><td>Stories are listed as bull and bear points.</td><td>Identify the causal mechanism that reprices the asset.</td></tr>
+      <tr><td><strong>Timing</strong></td><td>Catalysts are described but not prioritized.</td><td>Know what must happen before the market is forced to care.</td></tr>
+      <tr><td><strong>Action standard</strong></td><td>The output is balanced and non-committal.</td><td>Convert uncertainty into a position, hedge, or decision to pass.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Naked search is not enough</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Deep Research gives coverage. Context architecture moves AI up the judgment chain.</h2>
+  <div class="compare mt30">
+    <div class="panel red"><h3>Deep Research alone</h3><p>Comprehensive retrieval, source synthesis, consensus framing, and polished summary.</p><ul class="mini-list mt20"><li>Excellent for information coverage</li><li>Often forms a comprehensive consensus view</li><li>Weak on filtering, mechanism, decision, and action</li></ul></div>
+    <div class="panel green"><h3>Context-aware research AI</h3><p>Research executed inside your operating system of judgment: source hierarchy, variant lens, mechanisms, failure modes, and action standards.</p><ul class="mini-list mt20"><li>Filters what matters now</li><li>Tests the correct contrarian view</li><li>Connects evidence to tradeable decisions</li></ul></div>
+  </div>
+  <div class="takeaway">Your context architecture is the competitive edge: it lets AI help with the scarce parts of the chain, not just summarize the least scarce part.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Context architecture</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>For a PM, context is not a document library. It is the operating system of judgment.</h2>
+  <table class="table mt30">
+    <thead><tr><th>Context layer</th><th>What it contains</th><th>What it changes in output</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Source hierarchy</strong></td><td>Which evidence types carry weight by market, sector, and situation.</td><td>Prevents all sources from being flattened into equal prose.</td></tr>
+      <tr><td><strong>World model</strong></td><td>How industry mechanisms, macro drivers, competition, and policy connect.</td><td>Moves from listing facts to causal reasoning.</td></tr>
+      <tr><td><strong>Variant lens</strong></td><td>What consensus tends to miss or over-discount in a coverage area.</td><td>Forces a view instead of a balanced summary.</td></tr>
+      <tr><td><strong>Action standard</strong></td><td>What makes an insight tradeable: catalyst, timing, sizing, risk, monitor.</td><td>Connects research output to decision quality.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Why individual first</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>A top-down knowledge base is usually the wrong first wedge for PM workflows.</h2>
+  <div class="compare mt30">
+    <div class="panel red"><h3>Top-down first</h3><p>Collect documents, build a universal repository, and hope PMs change how they work.</p><ul class="mini-list mt20"><li>High integration cost</li><li>Weak connection to desk behavior</li><li>Easy to become a document dump</li></ul></div>
+    <div class="panel green"><h3>Individual first</h3><p>Start with one high-value weekly workflow, encode the PM's actual judgment pattern, then abstract the reusable pieces.</p><ul class="mini-list mt20"><li>Fast proof of value</li><li>Closer to how alpha is formed</li><li>Shared layer emerges from useful work</li></ul></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Compounding path</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Personal context becomes team infrastructure only after it proves useful in live work.</h2>
+  <div class="flow mt36">
+    <div class="step"><div class="n">01</div><strong>PM context file</strong><span>Coverage, source hierarchy, memo style, decision standards.</span></div>
+    <div class="step"><div class="n">02</div><strong>Workflow skill</strong><span>Pre-earnings, hypothesis check, morning brief, post-event review.</span></div>
+    <div class="step"><div class="n">03</div><strong>Reusable assets</strong><span>Scripts, templates, checklists, datasets, diagnostics, prompts.</span></div>
+    <div class="step"><div class="n">04</div><strong>Pod defaults</strong><span>Shared quality checks and common failure-mode protections.</span></div>
+    <div class="step"><div class="n">05</div><strong>Team layer</strong><span>Knowledge base shaped by work that has already created value.</span></div>
+  </div>
+</section>
+
+<section class="slide section">
+  <div class="topline"><div class="eyebrow">Part IV</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="content left-center">
+    <h2>Now we come back to the research question that has been running in the background.</h2>
+    <p class="sub">The comparison is not a magic trick. It is a way to inspect what each operating model produces after the same 10-15 minute head start.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Demo design</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The demo starts at the beginning; this section inspects the evidence it produced.</h2>
+  <div class="compare mt30">
+    <div class="panel navy"><h3>Run A: ChatGPT Pro + Deep Research</h3><p>Ask the strongest off-the-shelf research assistant for a comprehensive answer.</p><ul class="mini-list mt20"><li>Measures retrieval and summarization</li><li>Likely to produce a professional balanced report</li><li>Usually does not inherit a PM decision frame</li></ul></div>
+    <div class="panel gold"><h3>Run B: Agentic research flow</h3><p>Give the model a work environment: source hierarchy, tools, data pull, code execution, and a memo spec.</p><ul class="mini-list mt20"><li>Measures workflow execution</li><li>Can debug and rerun calculations</li><li>Leaves reusable context and assets for the next run</li></ul></div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Evaluation criteria</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The comparison should be judged on decision usefulness, not prose quality.</h2>
+  <table class="table mt30">
+    <thead><tr><th>Criterion</th><th>What to look for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Source discipline</strong></td><td>Does the output distinguish primary data, market data, sell-side commentary, news, and speculation?</td></tr>
+      <tr><td><strong>Variant perception</strong></td><td>Does it identify where consensus may be wrong and why?</td></tr>
+      <tr><td><strong>Mechanism</strong></td><td>Does it explain a causal path from evidence to repricing?</td></tr>
+      <tr><td><strong>Execution</strong></td><td>Does it pull data, calculate, verify, cite, and recover from errors without manual babysitting?</td></tr>
+      <tr><td><strong>Persistence</strong></td><td>Does it leave a reusable memo, script, checklist, or context artifact for the next similar question?</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">The Dymon frame</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The next step is to distill Dymon's investment frame, starting from Jay's judgment patterns, into reusable context.</h2>
+  <div class="grid3 mt30">
+    <div class="panel navy"><h3>Before context</h3><p>The model reasons like a well-read generalist. It knows information, not the desk's standards.</p></div>
+    <div class="panel gold"><h3>With Jay's frame</h3><p>The model inherits source hierarchy, preferred mechanisms, failure modes, and decision criteria.</p></div>
+    <div class="panel green"><h3>After enablement</h3><p>Each PM and analyst can build their own version and contribute reusable pieces to the team layer.</p></div>
+  </div>
+  <div class="takeaway">The goal is not one central AI oracle. The goal is compounding context around the way strong investors actually think.</div>
+</section>
+
+<section class="slide section">
+  <div class="topline"><div class="eyebrow">Part V</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="content left-center">
+    <h2>The course turns the thesis into a desk-level operating habit.</h2>
+    <p class="sub">Not three disconnected workshops. One real investment task, upgraded three times until the method becomes repeatable.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">The first wedge</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Before the course, we start with Jay's live research task.</h2>
+  <div class="grid3 mt30">
+    <div class="panel navy"><h3>1. Run the default</h3><p>Take a real question from Jay and produce the naked Deep Research version: broad, balanced, polished, and usually not decision-ready.</p></div>
+    <div class="panel gold"><h3>2. Inject the frame</h3><p>Iterate with Jay to encode source hierarchy, variant lens, failure modes, and what a usable PM output should look like.</p></div>
+    <div class="panel green"><h3>3. Bring it to the room</h3><p>The course begins with a side-by-side artifact the audience can inspect, not an abstract claim about AI productivity.</p></div>
+  </div>
+  <div class="takeaway">This makes the course specific to Dymon from the first minute: the proof object is the desk's own judgment, not a generic AI demo.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Course design</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Same task, three upgrades.</h2>
+  <div class="course-arc mt30">
+    <div class="course-stage">
+      <div class="session">Session 1</div>
+      <h3>Do it well once.</h3>
+      <p>Use axioms to guide a deep research pass. The live attribution experiment shows why context is the decisive layer: context &gt; mode &gt; prompt &gt; model.</p>
+      <div class="homework">Output: one decision-useful research pass and lessons learned.</div>
+    </div>
+    <div class="course-stage">
+      <div class="session">Session 2</div>
+      <h3>Package it as context.</h3>
+      <p>Distill personal axioms, write a reusable skill, and organize context through progressive disclosure so experience compounds instead of disappearing into chat history.</p>
+      <div class="homework">Output: personal axiom file, research skill, and rerun on a new ticker.</div>
+    </div>
+    <div class="course-stage">
+      <div class="session">Session 3</div>
+      <h3>Turn it into a loop.</h3>
+      <p>Extend the task into hypothesis verification: data sources, code execution, pitfalls, success criteria, memo format, and scheduled delegation.</p>
+      <div class="homework">Output: a reusable verification skill and first periodic workflow.</div>
+    </div>
+  </div>
+  <div class="takeaway">The repetition is intentional. Participants do not learn AI as a list of nouns; they practice the verbs until the workflow becomes natural.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">PM AI fluency gaps</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The course is designed around five gaps between casual AI use and real PM leverage.</h2>
+  <table class="table mt26">
+    <thead><tr><th>Gap</th><th>Average AI use</th><th>Target standard after training</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. Usable output</strong></td><td>Polished summary, weak stance, heavy PM rewrite.</td><td>Clear view, memo fit, and explicit judgment dimensions.</td></tr>
+      <tr><td><strong>2. Quality diagnosis</strong></td><td>Rotates prompt/model on instinct.</td><td>Diagnoses in order: context, working mode, prompt, model.</td></tr>
+      <tr><td><strong>3. Full-task delegation</strong></td><td>Human watches every step and becomes the pipeline.</td><td>One sentence delegates a hypothesis; the agent runs the loop.</td></tr>
+      <tr><td><strong>4. Compounding memory</strong></td><td>Last week's tuning is lost in chat history.</td><td>Personal and team context accumulate; new work inherits prior judgment.</td></tr>
+      <tr><td><strong>5. New capability</strong></td><td>AI accelerates existing workflow.</td><td>AI enables post-mortem, thesis-drift warning, and verification work that did not previously exist.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">What Dymon leaves with</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>The deliverable is not attendance. It is a first operating layer.</h2>
+  <div class="asset-grid mt30">
+    <div class="asset"><div class="mark">1</div><div><strong>Dymon Axiom Library</strong><span>A 27-axiom starter library covering source hierarchy, variant perception, decision standard, and failure modes.</span></div></div>
+    <div class="asset"><div class="mark">2</div><div><strong>Personal PM context files</strong><span>Each participant begins encoding how they judge quality, risk, timing, and actionability.</span></div></div>
+    <div class="asset"><div class="mark">3</div><div><strong>Reusable research skills</strong><span>Deep research, earnings preview, memo writing, hypothesis verification, and PowerPoint workflows.</span></div></div>
+    <div class="asset"><div class="mark">4</div><div><strong>Periodic execution scaffolding</strong><span>Templates for morning briefing, post-trade review, thesis drift, and scheduled delegation.</span></div></div>
+    <div class="asset"><div class="mark">5</div><div><strong>Team context architecture</strong><span>Shared pool, personal INDEX, baseline INDEX, heartbeat scans, and review alerts.</span></div></div>
+    <div class="asset"><div class="mark">6</div><div><strong>Three-month support loop</strong><span>Q&A channel and post-course review to identify patterns worth promoting into the team baseline.</span></div></div>
+  </div>
+  <div class="takeaway">The target is not frontier research capability. It is everyday AI fluency at the standard of strong employees inside first-tier AI organizations.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">AI is the new Excel</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>Jay's analogy is useful because it says three things at once.</h2>
+  <p class="sub">AI is the new Excel: not because the tools look alike, but because both are general-purpose work environments that become professional leverage after people learn the craft.</p>
+  <div class="grid3 mt30">
+    <div class="panel navy"><h3>1. Table stakes</h3><p>Excel fluency became a baseline business skill. AI fluency is moving into the same category for people who make decisions from information.</p></div>
+    <div class="panel gold"><h3>2. Learnable</h3><p>Business people did not need to become software engineers to learn Excel. They learned it by using it on real work, with feedback.</p></div>
+    <div class="panel green"><h3>3. Deep craft</h3><p>Opening Excel is easy; modeling well is hard. AI is similar: easy to start, but strong users compound a much larger advantage.</p></div>
+  </div>
+  <div class="takeaway">The point is not "everyone should chat with AI." The point is that AI fluency is becoming a serious operating skill, like Excel fluency did.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">What it means for PMs</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <h2>PMs should treat AI the way strong business people learned Excel: through real work, repeated practice, and reusable artifacts.</h2>
+  <table class="table mt30">
+    <thead><tr><th>Meaning</th><th>For Excel</th><th>For AI in investment work</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Baseline skill</strong></td><td>Everyone can open a sheet; serious operators model and audit assumptions.</td><td>Everyone can ask questions; serious PMs specify outcomes, context, evidence standards, and decision criteria.</td></tr>
+      <tr><td><strong>Learning path</strong></td><td>Skill grows by doing real models, reviewing mistakes, and reusing templates.</td><td>Skill grows by running real research tasks, diagnosing failures, and turning good runs into skills and context files.</td></tr>
+      <tr><td><strong>Support system</strong></td><td>Training accelerates the path from spreadsheet user to model builder.</td><td>The course and ongoing support accelerate the path from casual AI user to builder of compounding research workflows.</td></tr>
+    </tbody>
+  </table>
+  <div class="takeaway">This is the opportunity: make AI feel learnable to business people, while making clear that real mastery requires method and practice.</div>
+</section>
+
+<section class="slide">
+  <div class="topline"><div class="eyebrow">Closing</div><div class="brand-lockup"><img class="brand-logo dymon" src="assets/dymon-asia-logo.png" alt="Dymon Asia"><span class="brand-x">X</span><img class="brand-logo superlinear" src="assets/superlinear-academy-logo.svg" alt="Superlinear Academy"></div></div>
+  <div class="content left-center">
+    <div class="bigline">The question is not whether Dymon should use AI.</div>
+    <div class="rule"></div>
+    <h2>The question is which research workflows should become buildable, inspectable, and compounding.</h2>
+  </div>
+</section>
+
+</div>
+<div id="prog" style="width:2.38%"></div>
+<div id="counter">1 / 42</div>
+<div id="hint">← → or click to navigate</div>
+
+<script>
+(function () {
+  "use strict";
+  var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+  var total = slides.length;
+  var cur = 0;
+  var busy = false;
+  function update() {
+    document.getElementById("prog").style.width = (((cur + 1) / total) * 100).toFixed(2) + "%";
+    document.getElementById("counter").textContent = (cur + 1) + " / " + total;
+    window.location.hash = "slide-" + (cur + 1);
+  }
+  function go(n) {
+    if (busy || n === cur || n < 0 || n >= total) return;
+    busy = true;
+    var old = slides[cur];
+    old.classList.add("exiting");
+    cur = n;
+    slides[cur].classList.add("active");
+    setTimeout(function () {
+      old.classList.remove("active", "exiting");
+      busy = false;
+    }, 280);
+    update();
+  }
+  function bootFromHash() {
+    var m = window.location.hash.match(/slide-(\d+)/);
+    if (!m) return;
+    var idx = Number(m[1]) - 1;
+    if (idx < 0 || idx >= total) return;
+    document.documentElement.classList.add("booting");
+    slides.forEach(function (s) { s.classList.remove("active", "exiting"); });
+    slides[idx].classList.add("active");
+    cur = idx;
+    update();
+    requestAnimationFrame(function () { document.documentElement.classList.remove("booting"); });
+  }
+  document.addEventListener("keydown", function (e) {
+    if (["ArrowRight", "ArrowDown", "PageDown"].indexOf(e.key) !== -1 || e.code === "Space") { e.preventDefault(); go(cur + 1); }
+    if (["ArrowLeft", "ArrowUp", "PageUp"].indexOf(e.key) !== -1) { e.preventDefault(); go(cur - 1); }
+    if (e.key === "Home") { e.preventDefault(); go(0); }
+    if (e.key === "End") { e.preventDefault(); go(total - 1); }
+  });
+  document.getElementById("deck").addEventListener("click", function (e) {
+    if (e.target.closest("a, button")) return;
+    go(e.clientX > window.innerWidth * 0.25 ? cur + 1 : cur - 1);
+  });
+  var tx = 0;
+  document.addEventListener("touchstart", function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener("touchend", function (e) {
+    var dx = tx - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 48) go(dx > 0 ? cur + 1 : cur - 1);
+  }, { passive: true });
+  bootFromHash();
+  update();
+}());
+</script>
+</body>
+</html>
