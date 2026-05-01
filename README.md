@@ -62,6 +62,9 @@ For investment research, the point is not more summaries. The point is to move A
 - `assets/`  
   Logos and visual assets used by the deck.
 
+- `assets/INDEX.md`  
+  Canonical source notes for brand assets. Use this before replacing logos; the Superlinear Academy lockup should come from the 2026 brand identity package, not the retired pre-2026 SVG.
+
 - `vercel.json`  
   Static deployment config.
 
@@ -110,4 +113,3 @@ https://dymon-asia-ai-enablement.vercel.app
 ## Confidentiality
 
 This repository should remain private. It contains client-specific positioning, course design, and Dymon-related enablement material.
-
