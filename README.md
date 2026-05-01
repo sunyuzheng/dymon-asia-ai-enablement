@@ -21,22 +21,22 @@ The deck is written for Dymon Asia portfolio managers and senior investment prof
 
 ## Core Thesis
 
-Most AI usage is constrained by the wrong operating model.
+For PMs, AI leverage begins when judgment becomes infrastructure.
 
-Chatbot mode:
+Answers:
 
-- AI answers.
-- The human carries context.
-- The human executes the work.
-- The output is often disposable.
+- Chat gives a useful response.
+- The PM still carries context, verifies claims, and repeats the work next time.
 
-Agentic mode:
+Workflows:
 
-- AI works inside an environment with files, data, code, browser, citations, and persistent artifacts.
+- Agentic AI searches, computes, cites, checks, and leaves behind inspectable artifacts.
 - The human becomes specifier, reviewer, and judge.
-- Repeated work can become reusable workflow infrastructure.
 
-For investment research, the point is not more summaries. The point is to move AI up the chain from information coverage into filtering, mechanism, decision, and action.
+Context:
+
+- Dymon's source hierarchy, variant lens, and decision standards become reusable operating assets.
+- The deck's throughline is the move from AI as a chat product to AI as a research operating system for PM judgment.
 
 ## Key Narrative Arc
 

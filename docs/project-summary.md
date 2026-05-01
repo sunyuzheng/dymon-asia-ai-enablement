@@ -28,8 +28,8 @@ The deck needed to avoid generic AI hype. It also needed to be clear enough for 
 
 The final deck follows this sequence:
 
-1. **Executive thesis**  
-   Most AI usage is constrained by the wrong operating model.
+1. **Throughline**  
+   For PMs, AI leverage begins when judgment becomes infrastructure. The deck moves from answers to workflows to reusable context.
 
 2. **Live demo kickoff**  
    The room gives a real research question. A Deep Research workflow and an agentic workflow run in parallel.
@@ -144,7 +144,7 @@ The implication for PMs:
 ## Final Slide Structure
 
 1. Cover
-2. Executive thesis
+2. Throughline
 3. What this session is for
 4. Demo kickoff
 5. About Superlinear
@@ -229,4 +229,3 @@ The repo intentionally excludes:
 - `.DS_Store`
 
 The screenshots were used for QA during deck construction but are not part of the canonical project artifact.
-

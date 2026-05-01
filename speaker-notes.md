@@ -10,13 +10,13 @@ Set the expectation that the session will be practical. The audience should leav
 
 Transition: start with the core thesis before the examples.
 
-## Slide 2 — Executive Thesis
+## Slide 2 — Throughline
 
-Frame the main distinction: most underuse comes from the operating model around the model, rather than from weak model access.
+Lead with the PM-relevant claim: AI becomes leverage when judgment becomes infrastructure.
 
-Explain chatbot mode as a human-in-the-middle workflow: the model answers, the human carries context, executes work, finds problems, and starts over. Agentic mode changes the environment: the AI can work with files, data, browser, code, errors, citations, and persistent artifacts.
+Make the distinction concrete. Public information is abundant and increasingly easy for models to retrieve. The scarce layer is how a strong investor filters evidence, tests mechanisms, chooses timing, decides, and updates.
 
-Land the claim: the goal is turning repeated research judgment into reusable workflows.
+Walk the room through the three-step arc: answers are useful but disposable; workflows create inspectable artifacts; context turns Dymon's judgment standards into reusable operating assets.
 
 Transition: clarify what this session should resolve.
 
