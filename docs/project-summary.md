@@ -1,10 +1,10 @@
 # Project Summary: Dymon Asia AI Enablement Briefing
 
-## Final Output
+## Current Output
 
-This project produced a 43-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
+This project contains a 36-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
 
-Final production URL:
+Production URL:
 
 https://dymon-asia-ai-enablement.vercel.app
 
@@ -12,220 +12,161 @@ Speaker notes:
 
 https://dymon-asia-ai-enablement.vercel.app/speaker-notes.md
 
-## Project Goal
+## Current Goal
 
-The goal was to create a senior, practical, and coherent deck for a Dymon Asia audience explaining:
+The deck is designed for a practical, senior, impatient Dymon Asia audience. It avoids generic AI hype and focuses on a concrete operating question:
 
-- why AI is not merely a better chatbot;
-- why agentic workflows change the operating model of knowledge work;
-- why this matters specifically to investment research and PM judgment;
-- how Dymon can turn AI from ad hoc usage into repeatable research workflows;
-- how the proposed Superlinear course supports that transformation.
+How can PMs use AI to capture missed actions, missed opportunities, and missed context, then turn daily work into workflows that compound?
 
-The deck needed to avoid generic AI hype. It also needed to be clear enough for business people and PMs, while still feeling intellectually serious.
+## Current Thesis
 
-## Final Narrative
+AI leverage for PMs begins when daily work stops leaking value.
 
-The final deck follows this sequence:
+The model already knows a large amount of public information. The valuable layer is the operating system around the model:
 
-1. **Throughline**  
-   For PMs, AI leverage begins when judgment becomes infrastructure. The deck moves from answers to workflows to reusable context.
+- what work gets captured;
+- what action gets delegated;
+- what context gets retrieved;
+- what artifacts get created;
+- what judgment and follow-up persist into future work.
 
-2. **Live demo kickoff**  
-   The room gives a real research question. A Deep Research workflow and an agentic workflow run in parallel.
+## Narrative Structure
 
-3. **Interface shift**  
-   AI is the third interface to compute after GUI and programming: natural language makes general-purpose compute accessible, but only when paired with context, tools, and verification.
+1. **Throughline**
+   Daily PM work leaks value through missed actions, missed opportunities, and lost context.
 
-4. **Operating model problem**  
-   Chatbot usage keeps humans as middleware. Agentic AI creates a closed loop: specify, gather, execute, inspect, persist.
+2. **Demo preview**
+   Yan will demonstrate one internal onboarding process review transcript turning into execution and memory.
 
-5. **Market evidence**  
-   Cursor, Anthropic/Claude, Goldman Sachs, Shopify, and Block show that AI-native workflows and AI-native organization design are already emerging.
+3. **Operating shift**
+   Natural language becomes valuable when it dispatches work across tools, not when it merely produces chat answers.
 
-6. **Investment translation**  
-   PMs are not paid to summarize information. They are paid to transform information into signal, mechanism, judgment, and position.
+4. **Market signal**
+   Cursor, Anthropic/Claude, Goldman Sachs, Shopify, and Block show the shift from tool adoption to workflow and operating-model redesign.
 
-7. **Contrarian judgment**  
-   Efficient markets are the best-practice baseline. PMs get paid when they can be right where consensus is wrong. AI should help sharpen the correct contrarian view, not average it back into consensus.
+5. **PM translation**
+   Investment work moves from information to signal, mechanism, judgment, and action. AI needs context to assist the scarce parts of that chain.
 
-8. **Deep Research vs. context-aware research AI**  
-   Deep Research gives coverage and often a comprehensive consensus view. Context architecture moves AI up the judgment chain into filtering, mechanism, decision, and action.
+6. **Contrarian judgment**
+   The deck keeps the Naval/NFX contrarian framing, but removes the longer efficient-market detour. The point is to sharpen correct contrarian judgment, not to celebrate disagreement.
 
-9. **Dymon frame**  
-   The right first step is to distill Dymon's investment frame, starting with Jay's judgment patterns, into reusable context.
+7. **Onboarding process review demo**
+   The old live market-question demo was replaced. The new demo has lower cognitive load and makes the value visible without asking the audience to compare two long reports.
 
-10. **Course architecture**  
-    The course is not three disconnected workshops. It is one real investment task upgraded three times: do it well once, package it as context, turn it into a loop.
+8. **Course architecture**
+   The course trains the craft: specify, retrieve, delegate, inspect, package, and rerun. It helps Dymon PMs build similar workflows around their own work.
 
-11. **AI is the new Excel**  
-    Jay's analogy is used to explain that AI fluency is becoming a table-stakes business skill, that business people can learn it through real work, and that easy-to-start does not mean shallow.
+9. **AI is the new Excel**
+   Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates.
 
-## Key Conceptual Decisions
+## Demo Design
 
-### 1. Chatbot vs. Agentic Workflow
+The current live demo uses an internal onboarding process review transcript.
 
-The deck avoids presenting AI as "ChatGPT tips." The core distinction is operating model:
+### Beat 1: Capture
 
-- Chatbot workflows leave the human carrying context, execution, error handling, and asset persistence.
-- Agentic workflows let AI work inside an environment and leave reusable artifacts behind.
+Yan asks AI to summarize the meeting and identify action items.
 
-This distinction became the foundation for the entire deck.
+This starts with familiar AI behavior: meeting summary and action extraction.
 
-### 2. Context Architecture as Competitive Edge
+### Beat 2: Execute
 
-The most important Dymon-specific idea is that context architecture is not a document library. It is the operating system of judgment.
+Yan gives a one-sentence instruction:
 
-For PM work, context includes:
+> Action item 1: align with Priya in person. Find a mutual 30-minute slot next week, send the invite, and include the background note.
 
-- source hierarchy;
-- world model;
-- variant lens;
-- failure modes;
-- action standard;
-- memo standards;
-- decision criteria.
+The agent reads calendars, creates the invite, drafts/sends the background email, and pushes a completion notification.
 
-This is what lets AI move beyond summarizing the least scarce part of the investment chain.
+The point is hands-off execution across tools.
 
-### 3. Deep Research Is Useful But Not Enough
+### Beat 3: Artifact
 
-Deep Research is framed as excellent for coverage and consensus synthesis. But its default output tends to be comprehensive, balanced, and polished.
+Yan asks for a one-pager for Sarah using the Tom onboarding case, ABC Capital KYC, and SOP 4.2.
 
-The deck now explicitly contrasts this with context-aware research AI:
+The agent retrieves cross-document context, cites source links, creates a Google Doc, shares it with Sarah, sends a short email, and records the artifact.
 
-- Deep Research alone: information coverage, consensus view, polished summary.
-- Context-aware research AI: filtering, mechanism, correct contrarian view, tradeable decision.
+### Beat 4: Context Ledger
 
-This directly supports the live demo.
+The transcript and generated artifacts become structured context rows:
 
-### 4. Contrarian Thinking
+- people;
+- source;
+- topic;
+- owner;
+- linked context IDs;
+- derived artifact;
+- follow-up status;
+- retrieval hints.
 
-The deck uses the efficient-market framing, Naval's distinction about contrarian reasoning, and the NFX "How Contrarians Think" visual.
+The ledger can be opened in Excel/CSV and filtered or pivoted to inspect themes such as China energy or Indonesian coal. The key aha: repeated ideas and missed artifacts become visible.
 
-The point is not to celebrate disagreement. The point is to define PM edge as a structured difference in how evidence is processed:
+## Why The Demo Changed
 
-- source weighting;
-- mechanism;
-- timing;
-- action standard.
+The previous plan compared generic AI output with context-aware AI output on the same live research question.
 
-### 5. Course Design as Implementation Path
+That created two problems:
 
-The course is positioned as the implementation path, not a generic training offering.
+- the audience would need to read and evaluate two long reports in real time;
+- the comparison depended too much on domain judgment and could invite disagreement about the better answer.
 
-The structure:
+The new demo lowers cognitive load. The room can see action execution, cross-document handoff, and context capture directly.
 
-- Pre-course: Jay provides a live research task.
-- Session 1: do it well once with axioms and context.
-- Session 2: package it as personal/team context and reusable skills.
-- Session 3: turn it into a hypothesis-verification and periodic workflow loop.
-
-This gives the deck a concrete "what happens next" instead of ending at strategy.
-
-### 6. AI Is The New Excel
-
-Jay's Excel analogy was refined into two slides.
-
-The analogy says three things:
-
-1. AI fluency is becoming a table-stakes business skill.
-2. Business people can learn it through real work, as they learned Excel.
-3. Easy to start does not mean shallow; the gap between casual and strong users is large.
-
-The implication for PMs:
-
-- learn by doing real investment work;
-- practice repeatedly;
-- diagnose failures;
-- turn good runs into reusable artifacts;
-- use training and ongoing support to accelerate the path from casual use to compounding workflows.
-
-## Final Slide Structure
+## Current Slide Structure
 
 1. Cover
 2. Throughline
 3. What this session is for
-4. Demo kickoff
+4. Demo preview
 5. About Superlinear
 6. Narrative map
-7. Part I: AI as interface
-8. Bill Gates setup
-9. GUI reveal
-10. Three interfaces
-11. Missing operating model
-12. Chat as ceiling
-13. Agentic operating model
-14. Part II: market signals
-15. Cursor / Anysphere
-16. Anthropic / Claude
-17. Verbs, not nouns
-18. Goldman Sachs
-19. What to copy, what not to copy
-20. Shopify
-21. Block
-22. Synthesis
-23. Part III: investment translation
-24. Investment work mechanically
-25. Efficient markets reflection
-26. Contrarian view
-27. Where the edge lives
-28. Deep Research vs. context-aware AI
-29. Context architecture
-30. Why individual first
-31. Compounding path
-32. Part IV: demo return
-33. Demo design
-34. Evaluation criteria
-35. The Dymon frame
-36. Part V: course architecture
-37. The first wedge
-38. Course design
-39. PM AI fluency gaps
-40. What Dymon leaves with
-41. AI is the new Excel
-42. What it means for PMs
-43. Closing
+7. Part I: operating shift
+8. The third interface
+9. The missing operating model
+10. Chat as ceiling
+11. Agentic operating model
+12. Part II: market signal
+13. Cursor / Anysphere
+14. Anthropic / Claude
+15. Verbs, not nouns
+16. Goldman Sachs
+17. Copy the right pattern
+18. Shopify and Block
+19. Part III: PM translation
+20. Investment work mechanically
+21. Contrarian view
+22. Context moves AI up the chain
+23. Context architecture
+24. Part IV: demo
+25. Demo setup
+26. Demo beat 1: action to execution
+27. Demo beat 2: action to artifact
+28. Demo beat 3: work to memory
+29. Demo standard
+30. Part V: course architecture
+31. Course wedge
+32. Course design
+33. PM AI fluency gaps
+34. What Dymon leaves with
+35. AI is the new Excel
+36. Closing
 
 ## Delivery Notes
 
-The speaker notes live in `speaker-notes.md`. They are written as presentation guidance rather than a script.
+The speaker notes live in `speaker-notes.md`.
 
-The recommended delivery style:
+Recommended delivery style:
 
 - direct;
 - pragmatic;
-- not motivational;
-- light on buzzwords;
+- fast-paced;
+- light on AI importance arguments;
 - explicit about what each example proves;
-- careful to distinguish evidence, inference, and proposal.
+- careful to distinguish live demo output from mocked accumulated context.
 
-## Current Production State
+## Archive
 
-Current deck version:
-
-```text
-v11 course briefing
-```
-
-Current production URL:
+The previous version before the onboarding-demo rewrite is archived locally as:
 
 ```text
-https://dymon-asia-ai-enablement.vercel.app
+archive/pre-onboarding-demo-20260505
 ```
-
-Current deployment as of the final update:
-
-```text
-dpl_HiqzDDd4DkEWhSCpBTyLL7LZoW5R
-```
-
-## Repo Hygiene
-
-The repo intentionally excludes:
-
-- `.vercel/`
-- `screenshots/`
-- `.DS_Store`
-
-The screenshots were used for QA during deck construction but are not part of the canonical project artifact.

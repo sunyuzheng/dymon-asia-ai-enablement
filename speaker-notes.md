@@ -1,357 +1,257 @@
-# Dymon Asia AI Enablement Briefing — Speaker Notes
-
-These notes are written for a live briefing. They are not meant to be read verbatim. Use them to keep the narrative tight, make the transitions explicit, and avoid over-explaining each slide.
+# Dymon Asia AI Enablement Speaker Notes
 
 ## Slide 1 — AI Enablement for Investment Research
 
-Open with the promise of the session: this briefing focuses on how AI changes investment research workflows when it moves from chatbot answers into agentic systems, persistent context, and PM-level judgment.
+Open with the practical frame: this session is not about collecting more AI tools. It is about turning daily work into workflows that preserve judgment, move action forward, and compound context.
 
-Set the expectation that the session will be practical. The audience should leave with a mental model for what to build first and why a course can make that change operational.
-
-Transition: start with the core thesis before the examples.
+Transition: define the throughline.
 
 ## Slide 2 — Throughline
 
-Lead with the PM-relevant claim: AI becomes leverage when judgment becomes infrastructure.
+Use the leak metaphor. In high-value work, the loss usually happens between the meeting and the next action, between the note and the owner, between repeated themes and a decision process.
 
-Make the distinction concrete. Public information is abundant and increasingly easy for models to retrieve. The scarce layer is how a strong investor filters evidence, tests mechanisms, chooses timing, decides, and updates.
+Emphasize the three leaks: actions, opportunities, and context. The demo will make these visible.
 
-Walk the room through the three-step arc: answers are useful but disposable; workflows create inspectable artifacts; context turns Dymon's judgment standards into reusable operating assets.
-
-Transition: clarify what this session should resolve.
+Transition: set the audience expectation.
 
 ## Slide 3 — What This Session Is For
 
-Tell the room that the goal is a precise mental model for operating leverage. Walk through the four questions quickly.
+Tell the room what they should be able to evaluate by the end. The key question is not whether AI can answer questions. The question is whether AI can become a practical operating layer around work they already do.
 
-Emphasize the last two: PMs win by turning shared information into differentiated judgment. Dymon should start with individual PM workflows because alpha formation is personal before it becomes team infrastructure.
+Transition: preview the demo early so the deck does not feel abstract.
 
-Transition: make the session concrete with a live question.
+## Slide 4 — Demo Preview
 
-## Slide 4 — Demo Kickoff
+Explain that Yan will run the demo, and it will use an internal onboarding process review transcript. That choice is deliberate: everyone understands meetings, action items, follow-up, and lost context.
 
-Ask for one real research question from the room. It can be a company, macro theme, event, market risk, or current uncertainty worth a PM's attention this week.
+The demo has three beats: capture, execute, compound.
 
-Explain that you will start two workflows in parallel: a strong off-the-shelf Deep Research run and an agentic research workflow. The room will later inspect how different operating models produce different artifacts.
-
-Transition: while that runs, give the room your background and why this course exists.
+Transition: briefly introduce Superlinear and why the course is built this way.
 
 ## Slide 5 — About Superlinear
 
-Keep this brief. Your credibility comes from the intersection of economics, experimentation, growth data science, Statsig, and AI-native building.
+Keep this short. Your background gives credibility across economics, data, experimentation, and AI-native building. The course proof matters because the audience needs confidence that business people can learn this as a craft.
 
-Make the key point: Superlinear teaches the craft of using AI to build durable work systems. The student examples are proof that non-traditional coders can cross the boundary from AI user to AI builder.
-
-Transition: now map the whole narrative so people know where the talk is going.
+Transition: show the whole map before going into details.
 
 ## Slide 6 — Narrative Map
 
-Use this as the roadmap. The talk starts with a live question, moves through the paradigm shift, reads the market signals, translates those signals into PM work, returns to the demo, and ends with the course architecture.
+Walk through the five movements. The deck first explains the operating shift, then gives market evidence, then translates the idea into PM work, then shows the demo, then explains the course architecture.
 
-Move quickly through the rows. The roadmap makes the talk easy to follow and shows that the cases serve a single argument.
-
-Transition: Part I begins with the interface shift.
+Transition: start with the operating model.
 
 ## Slide 7 — Part I
 
-State the thesis cleanly: AI is a new interface to compute; chatbot usage is only the surface.
+Make the distinction crisp: chat is one surface; natural language can become the interface for dispatching work across files, tools, and context.
 
-Explain that this distinction matters because if the audience sees AI as only a chat product, they will design shallow workflows. If they see it as an interface to compute, tools, files, and memory, the strategy changes.
+Transition: use the interface table to ground that point.
 
-Transition: use the Bill Gates example to make the interface point.
+## Slide 8 — The Third Interface
 
-## Slide 8 — Paradigm Shift Setup
+The table is the simplest version of the thesis. GUI made specific computing tasks easier. Programming gave generality but required technical fluency. Natural language lowers the starting barrier for general-purpose work.
 
-Ask the room to guess Gates's first revolutionary technology. Let people think briefly. The wrong guesses are useful because they reveal the usual framing: internet, mobile, cloud.
+The caveat is important: the value depends on context, tools, verification, and habits.
 
-Use Bill Gates as a way into the interface analogy. The first answer was GUI, which changed who could operate compute.
+Transition: explain why tools alone do not create productivity.
 
-Transition: reveal why GUI is the right comparison.
+## Slide 9 — The Missing Operating Model
 
-## Slide 9 — The Reveal
+Use the Red Flag Act and factory analogies quickly. New technology expresses value only when the work is redesigned around it.
 
-Explain GUI as an access shift. Before GUI, computing was powerful but gated by command-line and programming fluency. GUI made specific computing tasks usable by non-programmers.
+Connect this to AI: if the human still carries all context and executes every step manually, the system stays shallow.
 
-Then state the analogy: natural language is the third interface. It lets non-programmers operate more general-purpose compute. That puts AI in a different category from ordinary SaaS.
+Transition: identify where casual AI use leaks.
 
-Transition: compare GUI, programming, and natural language.
+## Slide 10 — Chat As Ceiling
 
-## Slide 10 — Three Interfaces
+Walk through the three leaks: follow-through, context supply, and memory. These are not theoretical; they happen in normal PM and analyst work every week.
 
-Walk through the table. GUI is easy but constrained by what designers expose. Programming is general but hard. Natural language is general and easy to start, but hard to wield well.
+The phrase to land: the human becomes middleware.
 
-Emphasize the last column: natural language still needs context, tools, and verification. The message is to stop treating chat as the whole operating model.
+Transition: show the alternative loop.
 
-Transition: a new interface only matters if work is redesigned around it.
+## Slide 11 — Agentic Operating Model
 
-## Slide 11 — The Missing Operating Model
+Describe this as a work loop: specify, retrieve, act, inspect, persist. The demo will show all five steps in a simple internal workflow.
 
-Use the analogies sparingly. The red-flag analogy: if the human must walk in front of the machine, the machine cannot express its speed. The electric motor analogy: factories had to redesign workflows instead of swapping the power source.
+Transition: now give evidence that this shift is already happening.
 
-Then connect it to chat: if humans still move context, execute work, and bring failures back manually, AI cannot compound.
+## Slide 12 — Part II
 
-Transition: define the specific ceiling of chat workflows.
+Do not over-sell AI importance. State the market signal in one sentence: the winners are redesigning workflows, while incumbents are learning how to govern them.
 
-## Slide 12 — Chat As Ceiling
+Transition: Cursor is the cleanest AI-native workflow signal.
 
-Explain the three failure modes: open feedback loop, repeated context supply, and poor asset retention.
+## Slide 13 — Cursor / Anysphere
 
-The phrase to land: the human becomes middleware. This is why AI can look intelligent and still fail to change operations.
+Use the table as a speed signal. The point is not the exact valuation trivia; the point is that an AI workflow can become the daily environment for a high-value profession very quickly.
 
-Transition: contrast that with agentic workflows.
+Transition: coding is the most visible version of the pattern, but the lesson is broader.
 
-## Slide 13 — Agentic Operating Model
+## Slide 14 — Anthropic / Claude
 
-Describe agentic AI as a loop: specify, gather, execute, inspect, persist. It is a different workflow architecture.
+Emphasize mastery. Strong users delegate loops, review outputs, tighten tests, and preserve learnings. Weak users stay at the chat/autocomplete layer.
 
-For a PM, the important shift is role change. The human becomes the specifier, reviewer, and judge, not the person manually carrying every step.
+Connect to the course: business people can learn the same verbs even without coding background.
 
-Transition: now show that the market is already moving in this direction.
+Transition: name the verbs explicitly.
 
-## Slide 14 — Part II
+## Slide 15 — Verbs, Not Nouns
 
-Set up the evidence section carefully. Read the pattern across AI-native companies and incumbents rather than turning it into a success-story highlight reel.
+Contrast vocabulary with craft. RAG, MCP, agents, and model names are useful nouns, but real capability lives in verbs: specify, retrieve, delegate, inspect, test, package, rerun.
 
-AI-native firms show the steep curve. Incumbents show the governance and absorption path.
+Use investing as the analogy. Knowing sector labels and metrics does not create edge; knowing how to weigh evidence and make decisions does.
 
-Transition: start with Cursor as the cleanest AI-native workflow example.
+Transition: incumbents need the same capability with governance.
 
-## Slide 15 — Cursor / Anysphere
+## Slide 16 — Goldman Sachs
 
-Avoid over-indexing on valuation. The strategic signal is how fast an AI workflow became the daily environment for developers.
+Position Goldman as an adoption signal, not a simple success story. The point is that even regulated incumbents are moving from experimentation to supervised agentic work.
 
-The parallel for Dymon: a high-value profession can shift its default work surface quickly once the workflow is redesigned around AI.
+Connect to Dymon: high-stakes workflows need permissions, provenance, review, and accountability.
 
-Transition: move from market adoption to frontier-company behavior.
+Transition: combine speed and governance.
 
-## Slide 16 — Anthropic / Claude
+## Slide 17 — Copy The Right Pattern
 
-Explain that the strongest AI users have moved beyond asking whether AI can code. They are changing the practice of coding: specify the task, let the agent work, review the diff, tighten tests, preserve the learning.
+State the synthesis: take workflow speed from AI-native companies and governance discipline from finance. Dymon should not copy startup chaos, and it should not wait for perfect enterprise rollout either.
 
-The key takeaway is method and mastery. Weaker users may have the same model but lack the craft of specification, decomposition, inspection, testing, and iteration.
+Transition: management systems are also changing.
 
-Connect to business users: this is accessible beyond engineers because the bottleneck is increasingly workflow mastery.
+## Slide 18 — Shopify And Block
 
-Transition: name the broader principle: verbs, not nouns.
+Use this as the operating-model proof. Shopify makes AI a management expectation; Block pushes toward intelligence layers and shared world models.
 
-## Slide 17 — Verbs, Not Nouns
+Land the point: this is a work redesign, not a software rollout.
 
-Use this as a teaching philosophy slide. Nouns are model names, tools, RAG, MCP, agents, benchmarks. They matter, but mastery comes from practice.
+Transition: bring the argument back to PM work.
 
-Verbs are the craft: specify, decompose, delegate, inspect, test, revise, document, reuse. Investing has the same structure: edge lives in weighing evidence, forming variant views, sizing risk, monitoring catalysts, and revising.
+## Slide 19 — Part III
 
-Transition: now show how the pattern reaches beyond AI-native software companies.
+PM work is not mainly a text access problem. The scarce layers are filtering, mechanism, decision, sizing, and follow-through.
 
-## Slide 18 — Goldman Sachs
+Transition: show the mechanical chain.
 
-Position Goldman as a regulated-incumbent signal. If a compliance-heavy Wall Street firm is piloting autonomous engineering agents, the conversation has moved from "is this too early?" to "how do we govern it?"
+## Slide 20 — Investment Work, Mechanically
 
-Connect to Dymon: PM workflows also need specification, permissioning, provenance, review, and persistent artifacts.
+Walk left to right. Information is the least scarce layer. The PM value sits in transforming information into signal, mechanism, judgment, and action.
 
-Transition: synthesize the right pattern to borrow.
+Tie to AI: summarization helps, but context and workflow are needed to climb the chain.
 
-## Slide 19 — Copy The Right Pattern
+Transition: connect this to contrarian judgment.
 
-Make the contrast simple. From AI-native companies, copy workflow speed, tight feedback loops, and reusable artifacts. From finance incumbents, copy governance discipline, review paths, permissioning, and auditability.
+## Slide 21 — Contrarian View
 
-Dymon's answer is to redesign research workflows with AI-native speed and finance-grade source discipline.
+Keep the Naval point. Valuable contrarian thinking is independent reasoning under pressure to conform, not reflexive disagreement.
 
-Transition: move from finance to broader organizational adoption signals.
+Use the three bullets: understand consensus, find the correct contrarian view, turn it into a tradeable decision.
 
-## Slide 20 — Shopify
+Transition: context is what lets AI support that process.
 
-Use Shopify as an example of AI becoming a management baseline. The key move is changing resource allocation and performance expectations.
+## Slide 22 — Context Moves AI Up The Chain
 
-Frame the management question: before adding people or resources, ask what the team should look like if AI teammates were already part of the workflow.
+Explain one-off research as useful coverage. Then explain context-aware workflow as the step toward judgment and action.
 
-Transition: Block is the more radical version of the same pattern.
+The key line: context architecture is the edge around the model.
 
-## Slide 21 — Block
+Transition: define the context layers.
 
-Be careful to keep this from becoming a layoffs story. The deeper signal is organizational redesign: hierarchy as information routing is being replaced by an intelligence layer.
+## Slide 23 — Context Architecture
 
-Explain the world-model idea: if the organization has shared company and customer models that AI tools can read and update, coordination changes. Managers become mentors, guides, and domain experts at the edge.
+Move through the rows quickly: source hierarchy, world model, variant lens, action standard. These are the pieces that prevent AI from flattening all evidence into balanced prose.
 
-Land the urgency: the risk is treating a paradigm shift like a normal software rollout.
+Transition: now make it tangible with Yan's demo.
 
-Transition: synthesize the evidence.
+## Slide 24 — Part IV
 
-## Slide 22 — Synthesis
+Reset attention. Tell them the demo is not a staged trick about a complex investment question. It is a simple internal workflow because that is where daily leakage is easiest to see.
 
-Walk down the table quickly and avoid retelling each case. The pattern is the point: Cursor shows workflow capture, Anthropic shows frontier-team practice, Goldman shows governed deployment, Shopify shows management expectation, Block shows org-design pressure.
+Transition: establish the meeting input.
 
-The takeaway is that the gap opens at the speed of workflow and organization redesign, faster than ordinary enterprise software adoption.
+## Slide 25 — Demo Setup
 
-Transition: translate the pattern into investment work.
+Yan should introduce the transcript in one sentence: "This is last week's internal onboarding process review meeting."
 
-## Slide 23 — Part III
+Show that the first prompt is familiar: summarize and identify action items. Then move quickly to execution.
 
-Set up the PM-specific argument. AI has to climb from information retrieval into judgment support.
+Transition: action item one becomes calendar and email.
 
-The bottleneck for PMs is transforming noisy information into differentiated, tradeable judgment.
+## Slide 26 — Demo Beat 1
 
-Transition: break down investment work mechanically.
+Read Yan's instruction. Stress the specificity: owner, counterpart, time window, meeting length, background email.
 
-## Slide 24 — Investment Work, Mechanically
+The important observation is hands-off execution across tools: calendar lookup, invite creation, email drafting, sending, and notification.
 
-Use the chain: information, signal, mechanism, judgment, position. AI that only summarizes operates at the least scarce part of the chain.
+Transition: now show a more context-heavy handoff.
 
-Make the PM implication explicit: the higher-value question is how AI helps with source weighting, causal mechanism, timing, sizing, monitoring, and revision.
+## Slide 27 — Demo Beat 2
 
-Transition: connect this to efficient markets and the meaning of edge.
+This beat proves cross-document context. The one-pager needs the Tom onboarding case, ABC Capital KYC correspondence, and SOP 4.2.
 
-## Slide 25 — Finance Education Reflection
+Point out source links and the Google Doc/share/email sequence. This is where "someone should pull the background together" becomes an actual artifact.
 
-This is where you can briefly reference your economics/finance background. Keep it modest: the textbook model is useful, but people often misread it.
+Transition: now show why the system compounds.
 
-The practical point: shared information can still produce different beliefs, timing, action thresholds, and position sizing. Edge lives in the transformation layer.
+## Slide 28 — Demo Beat 3
 
-Transition: from efficient markets to contrarian thinking.
+Explain the context ledger. The system captures people, topics, source links, owners, derived artifacts, and status.
 
-## Slide 26 — Contrarian View
+Use the pivot examples: China energy context, Indonesian coal appearing across multiple people, and rows where no artifact exists. The aha is visibility into missed opportunities.
 
-Lead with the distinction: best practice is the efficient market; you get paid when you are right and consensus is wrong.
+Transition: define how the audience should judge the demo.
 
-Use the Naval framing: valuable contrarian reasoning starts from first principles under pressure to conform. Reflexive disagreement misses the point.
+## Slide 29 — Demo Standard
 
-Use the NFX image to make the visual point: most best practices sit in the center of the distribution; the rare value is finding the correct tail case and turning it into a tradeable decision.
+Tell them not to judge the demo by whether the prose is elegant. Judge it by captured work: actions, opportunities, context, hands-off execution, and transfer into Dymon workflows.
 
-Transition: define where the edge actually lives.
+Transition: now explain how the course transfers the pattern.
 
-## Slide 27 — Where The Edge Lives
+## Slide 30 — Part V
 
-This slide operationalizes contrarian thinking as a structured difference in source weighting, mechanism, timing, and action standard.
+Clarify that Yan's demo is a reference case. The course value is helping PMs build comparable workflows around their own research, meetings, notes, and delegation patterns.
 
-Connect each row to AI: a generic model tends to flatten sources, list bull/bear stories, and produce balanced prose. PM context tells AI what deserves weight and what action standard matters.
+Transition: explain the wedge.
 
-Transition: therefore Deep Research alone stalls at coverage.
+## Slide 31 — Course Wedge
 
-## Slide 28 — Naked Search Is Not Enough
+The course starts with one real workflow. First prove individual utility, then package the useful pieces into reusable skills and context files.
 
-Explain that Deep Research is useful for coverage. It can produce a comprehensive consensus view and a polished summary, but it usually stays near the information layer.
+This keeps the work close to actual PM behavior instead of starting with a top-down knowledge base.
 
-Tie this back to slide 24: the least scarce part of the chain is information. The more scarce parts are filter, mechanism, decision, and action. Context-aware research AI is different because it operates inside the PM's context architecture: source hierarchy, variant lens, mechanisms, failure modes, and action standards.
+Transition: show the three-session arc.
 
-The line to land: your context architecture is the competitive edge. It lets AI help with the scarce parts of investment work instead of stopping at information summary.
+## Slide 32 — Course Design
 
-Transition: define that context architecture.
+Session 1: complete work loop. Session 2: package judgment as context. Session 3: turn work into infrastructure.
 
-## Slide 29 — Context Architecture
+Stress repetition. This is how business people learn craft: real work, feedback, and reusable patterns.
 
-Make clear that context works as the operating system of judgment for a PM.
+Transition: name the gaps the course closes.
 
-Walk through the four layers: source hierarchy, world model, variant lens, action standard. The output changes only when these layers are explicit enough for the AI to inherit them.
+## Slide 33 — PM AI Fluency Gaps
 
-Transition: explain why this should begin with individuals before a top-down knowledge base.
+Walk the five gaps quickly. The most important ones for this audience are full-task delegation and compounding memory.
 
-## Slide 30 — Why Individual First
+Connect back to the demo: action capture and context ledger are examples of new capability, not just acceleration.
 
-Contrast the two approaches. Top-down knowledge bases often become expensive document repositories disconnected from desk behavior.
+Transition: summarize what Dymon leaves with.
 
-Individual-first starts with one valuable workflow and encodes the PM's actual judgment pattern. Shared infrastructure should emerge from useful work before becoming a theoretical architecture.
+## Slide 34 — What Dymon Leaves With
 
-Transition: show how personal context compounds into team infrastructure.
+Describe this as a first operating layer, not a finished enterprise platform. The artifacts include axiom library, PM context files, reusable workflow skills, context ledger pattern, team context architecture, and support loop.
 
-## Slide 31 — Compounding Path
+Transition: close with Jay's Excel analogy.
 
-Walk the path from PM context file to workflow skill, reusable assets, pod defaults, and team layer.
+## Slide 35 — AI Is The New Excel
 
-The important claim is sequencing: personal context should prove useful in live work before it is promoted into shared infrastructure.
+Use Jay's analogy to make the training path feel obvious. Excel became table stakes, but real modeling still required training and practice. AI has the same shape: easy to start, deep to master.
 
-Transition: return to the live demo.
+The course helps business people learn the craft before the gap becomes large.
 
-## Slide 32 — Part IV
+Transition: final close.
 
-Remind the room that the demo has been running in the background. This section is an inspection.
+## Slide 36 — Closing
 
-The question is what each operating model produced after the same head start.
+End on the operational outcome: fewer missed actions, fewer missed opportunities, and a context system that compounds with daily work.
 
-Transition: compare Run A and Run B.
-
-## Slide 33 — Demo Design
-
-Explain Run A and Run B cleanly. Run A tests the best off-the-shelf research assistant mode. Run B tests an agentic workflow with source hierarchy, tools, data, code execution, and a memo spec.
-
-Make the evaluation standard explicit: evidence, calculations, gaps, artifacts, and reuse matter more than prose polish.
-
-Transition: use explicit evaluation criteria.
-
-## Slide 34 — Evaluation Criteria
-
-Use this as a checklist for the demo output. Ask the room to judge source discipline, variant perception, mechanism, execution, and persistence.
-
-The strongest line: decision usefulness matters more than prose quality. A polished report that fails to improve the decision falls short.
-
-Transition: connect the demo to the Dymon-specific course.
-
-## Slide 35 — The Dymon Frame
-
-This is the bridge from argument to implementation. The next step is to distill Dymon's investment frame, starting with Jay's judgment patterns, into reusable context.
-
-Explain the before/after: without context, the model is a well-read generalist. With Jay's frame, it inherits source hierarchy, mechanisms, failure modes, and decision criteria. After enablement, each PM can build their own version and contribute reusable pieces.
-
-Transition: now introduce the course as the path to make this habit.
-
-## Slide 36 — Part V
-
-State that the course uses one real investment task, upgraded three times.
-
-The phrase to land: the course turns the thesis into a desk-level operating habit.
-
-Transition: start with the first wedge before the course.
-
-## Slide 37 — The First Wedge
-
-Explain the pre-course collaboration with Jay. Start with a real task, produce the naked Deep Research version, then inject Jay's frame and iterate.
-
-The result creates a classroom proof object: the room can inspect the before/after and see that the difference comes from judgment context rather than generic AI enthusiasm.
-
-Transition: show the three-session spiral.
-
-## Slide 38 — Course Design
-
-Explain the spiral: same task, three upgrades. Session 1 does it well once. Session 2 packages it as context and skill. Session 3 turns it into a loop with hypothesis verification and scheduled delegation.
-
-Emphasize intentional repetition. Participants practice the verbs until the method becomes natural.
-
-Transition: define the capability gaps the course closes.
-
-## Slide 39 — PM AI Fluency Gaps
-
-Walk through the five gaps quickly. The difference between average and strong AI use comes from usable output, quality diagnosis, full-task delegation, compounding memory, and new capability.
-
-For Dymon, the most important gaps are probably 2, 3, and 4: diagnosing failure, delegating full tasks, and making experience compound.
-
-Transition: show what Dymon leaves with.
-
-## Slide 40 — What Dymon Leaves With
-
-Make this concrete. Dymon leaves with a first operating layer.
-
-Walk through the six outputs: Dymon Axiom Library, personal PM context files, reusable research skills, periodic execution scaffolding, team context architecture, and three-month support.
-
-The final point is important: the target is everyday AI fluency at the level of strong employees inside first-tier AI organizations.
-
-Transition: now explain Jay's Excel analogy because it makes the learning path intuitive.
-
-## Slide 41 — AI Is The New Excel
-
-Introduce the analogy explicitly: Jay's point is that AI and Excel are both general-purpose work environments that become professional leverage after people learn the craft.
-
-Talk through the three meanings. First, table stakes: AI fluency is becoming a baseline skill. Second, learnable: business people can learn it through real work. Third, deep craft: easy to start does not mean easy to master.
-
-Transition: translate the analogy into PM behavior.
-
-## Slide 42 — What It Means For PMs
-
-Use the table to make the analogy actionable. Everyone can open a sheet, but strong operators model and audit assumptions. Everyone can ask AI questions, but serious PMs specify outcomes, context, evidence standards, and decision criteria.
-
-Training matters because it shortens the path from casual use to operating skill. Ongoing support matters because mastery comes from repeated use, diagnosing failures, and preserving what worked.
-
-Transition: close with the decision question.
-
-## Slide 43 — Closing
-
-Close by reframing the decision. The conversation has moved beyond whether Dymon should use AI.
-
-The real question is which research workflows should become buildable, inspectable, and compounding. This points naturally to the proposed course: start with real PM work, encode judgment, and turn repeated tasks into systems.
+This is the standard the audience should hold the program to.

@@ -1,6 +1,6 @@
 # Dymon Asia AI Enablement Briefing
 
-Private working repository for the Dymon Asia AI enablement briefing deck and speaker notes.
+Working repository for the Dymon Asia AI enablement briefing deck and speaker notes.
 
 Live deck:
 
@@ -11,62 +11,80 @@ Live deck:
 
 This project is a static HTML presentation for a Dymon Asia briefing on AI enablement for investment research and portfolio manager workflows.
 
-The deck argues that the meaningful shift is not "better chatbot usage." It is the move from chat-based answers to agentic research workflows, persistent context infrastructure, and PM-level judgment systems.
+The current deck argues that the meaningful shift is operational: AI should help PMs capture missed actions, missed opportunities, and missed context, then turn daily work into a compounding context system.
 
-The final deck is `v11 course briefing` and contains 43 slides.
+The current deck is `v12 course briefing` and contains 36 slides.
 
 ## Audience
 
-The deck is written for Dymon Asia portfolio managers and senior investment professionals. The intended audience is financially sophisticated, practical, and skeptical of generic AI hype. The tone is therefore structured, direct, and focused on workflow, judgment, governance, and implementation.
+The deck is written for Dymon Asia portfolio managers and senior investment professionals. The intended audience is financially sophisticated, practical, and impatient with generic AI hype. The tone is direct, structured, and focused on workflow, judgment, governance, and implementation.
 
 ## Core Thesis
 
-For PMs, AI leverage begins when judgment becomes infrastructure.
+AI leverage for PMs begins when daily work stops leaking value.
 
-Answers:
+Actions:
 
-- Chat gives a useful response.
-- The PM still carries context, verifies claims, and repeats the work next time.
+- Action items move from transcript to calendar, email, owner, and follow-up.
+- The human does not have to be middleware across every tool.
 
-Workflows:
+Opportunities:
 
-- Agentic AI searches, computes, cites, checks, and leaves behind inspectable artifacts.
-- The human becomes specifier, reviewer, and judge.
+- Repeated themes across meetings, notes, and calls become visible.
+- The system can distinguish a mentioned theme from a derived artifact.
 
 Context:
 
-- Dymon's source hierarchy, variant lens, and decision standards become reusable operating assets.
-- The deck's throughline is the move from AI as a chat product to AI as a research operating system for PM judgment.
+- Useful work leaves a trace: people, source links, decisions, tags, owners, and reusable patterns.
+- Context infrastructure becomes the operating system around PM judgment.
 
 ## Key Narrative Arc
 
-1. Start a live research question in the room.
-2. Explain why AI is a new interface to compute, not merely a better chatbot.
-3. Show market evidence from AI-native firms and incumbents.
-4. Translate the shift into portfolio manager work.
-5. Return to the demo and judge outputs by decision usefulness.
-6. Introduce the Dymon-specific course architecture.
-7. Close with Jay's "AI is the new Excel" analogy.
+1. Frame the leak: actions, opportunities, and context disappear in ordinary daily work.
+2. Explain the operating shift from chat to natural-language dispatch across tools.
+3. Show market signals from AI-native firms and governed incumbents.
+4. Translate the shift into PM judgment and action.
+5. Run Yan's onboarding process review demo in three beats: capture, execute, compound.
+6. Explain how the course trains Dymon PMs to build similar workflows.
+7. Close with Jay's "AI is the new Excel" learning frame.
+
+## Demo Design
+
+The live demo uses an internal onboarding process review transcript, not a market research question.
+
+The three beats:
+
+- Meeting transcript -> summary and action items.
+- One instruction -> calendar invite, background email, and owner notification.
+- Follow-up instruction -> cross-document one-pager, Google Doc, share/email, and context ledger.
+
+The demo is judged by captured work, not prose quality:
+
+- fewer missed actions;
+- fewer missed opportunities;
+- less lost context;
+- hands-off execution across tools;
+- transferable course method.
 
 ## Important Files
 
-- `index.html`  
+- `index.html`
   The presentation deck. It is self-contained HTML/CSS/JS with local assets.
 
-- `speaker-notes.md`  
-  Page-by-page speaker notes for all 43 slides. These are designed for live delivery, not as a transcript.
+- `speaker-notes.md`
+  Page-by-page speaker notes for all 36 slides. These are designed for live delivery, not as a transcript.
 
-- `docs/project-summary.md`  
-  A summary of the project, deck logic, major decisions, and final conclusions.
+- `docs/project-summary.md`
+  Summary of the project, deck logic, major decisions, and current conclusions.
 
-- `assets/`  
-  Logos and visual assets used by the deck.
+- `Dymon Asia Pitch Demo_ Context Infrastructure-v2.md`
+  Current demo strategy and live-flow design.
 
-- `assets/INDEX.md`  
-  Canonical source notes for brand assets. Use this before replacing logos; the Superlinear Academy lockup should come from the 2026 brand identity package, not the retired pre-2026 SVG.
+- `Dymon Asia Pitch Demo_ Context Infrastructure-artifact-design.md`
+  Artifact, transcript, and context ledger design for the demo.
 
-- `vercel.json`  
-  Static deployment config.
+- `assets/INDEX.md`
+  Canonical source notes for brand assets. Use this before replacing logos; the Superlinear Academy lockup should come from the 2026 brand identity package.
 
 ## Running Locally
 
@@ -110,6 +128,10 @@ The current production alias is:
 https://dymon-asia-ai-enablement.vercel.app
 ```
 
-## Confidentiality
+## Archive
 
-This repository should remain private. It contains client-specific positioning, course design, and Dymon-related enablement material.
+The pre-onboarding-demo version is archived locally as:
+
+```text
+archive/pre-onboarding-demo-20260505
+```
