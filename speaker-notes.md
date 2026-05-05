@@ -26,7 +26,7 @@ Transition: briefly establish Superlinear's credibility.
 
 ## Slide 5 — About Superlinear
 
-Do not over-explain your background. Let the visible proof points do the work: Cornell economics, Statsig experimentation, Superlinear AI Builders, course scale, operator testimonials.
+Do not turn this into a bio. Let the proof points do the work: Cornell economics, Meta/Amazon/Tencent data science, Statsig experimentation, Statsig's OpenAI acquisition, AI Builders scale, and operator testimonials. The implication should be clear without saying it: this is data, experimentation, AI-native building, and teaching credibility in one frame.
 
 Transition: show the roadmap.
 
