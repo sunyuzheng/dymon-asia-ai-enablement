@@ -13,7 +13,7 @@ This project is a static HTML presentation for a Dymon Asia briefing on AI enabl
 
 The current deck argues that the meaningful shift is operational: AI should help PMs capture missed actions, missed opportunities, and missed context, then turn daily work into a compounding context system.
 
-The current deck is `v12 course briefing` and contains 36 slides.
+The current deck is `v12 course briefing` and contains 38 slides.
 
 ## Audience
 
@@ -41,12 +41,13 @@ Context:
 ## Key Narrative Arc
 
 1. Frame the leak: actions, opportunities, and context disappear in ordinary daily work.
-2. Explain the operating shift from chat to natural-language dispatch across tools.
-3. Show market signals from AI-native firms and governed incumbents.
-4. Translate the shift into PM judgment and action.
-5. Run Yan's onboarding process review demo in three beats: capture, execute, compound.
-6. Explain how the course trains Dymon PMs to build similar workflows.
-7. Close with Jay's "AI is the new Excel" learning frame.
+2. Use the Gates GUI question to make the interface shift concrete.
+3. Explain the operating shift from chat to natural-language dispatch across tools.
+4. Show market signals from AI-native firms and governed incumbents.
+5. Translate the shift into PM judgment and action.
+6. Run Yan's onboarding process review demo in three beats: capture, execute, compound.
+7. Explain how the course trains Dymon PMs to build similar workflows.
+8. Close with Jay's "AI is the new Excel" learning frame.
 
 ## Demo Design
 
@@ -72,7 +73,7 @@ The demo is judged by captured work, not prose quality:
   The presentation deck. It is self-contained HTML/CSS/JS with local assets.
 
 - `speaker-notes.md`
-  Page-by-page speaker notes for all 36 slides. These are designed for live delivery, not as a transcript.
+  Page-by-page speaker notes for all 38 slides. These are designed for live delivery, not as a transcript.
 
 - `docs/project-summary.md`
   Summary of the project, deck logic, major decisions, and current conclusions.

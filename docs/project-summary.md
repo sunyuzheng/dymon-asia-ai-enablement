@@ -2,7 +2,7 @@
 
 ## Current Output
 
-This project contains a 36-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
+This project contains a 38-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
 
 Production URL:
 
@@ -38,25 +38,28 @@ The model already knows a large amount of public information. The valuable layer
 2. **Demo preview**
    Yan will demonstrate one internal onboarding process review transcript turning into execution and memory.
 
-3. **Operating shift**
+3. **Gates GUI question**
+   The deck reintroduces the Bill Gates question because it engages the room and shows that the category shift is less obvious than it first appears.
+
+4. **Operating shift**
    Natural language becomes valuable when it dispatches work across tools, not when it merely produces chat answers.
 
-4. **Market signal**
+5. **Market signal**
    Cursor, Anthropic/Claude, Goldman Sachs, Shopify, and Block show the shift from tool adoption to workflow and operating-model redesign.
 
-5. **PM translation**
+6. **PM translation**
    Investment work moves from information to signal, mechanism, judgment, and action. AI needs context to assist the scarce parts of that chain.
 
-6. **Contrarian judgment**
+7. **Contrarian judgment**
    The deck keeps the Naval/NFX contrarian framing, but removes the longer efficient-market detour. The point is to sharpen correct contrarian judgment, not to celebrate disagreement.
 
-7. **Onboarding process review demo**
+8. **Onboarding process review demo**
    The old live market-question demo was replaced. The new demo has lower cognitive load and makes the value visible without asking the audience to compare two long reports.
 
-8. **Course architecture**
+9. **Course architecture**
    The course trains the craft: specify, retrieve, delegate, inspect, package, and rerun. It helps Dymon PMs build similar workflows around their own work.
 
-9. **AI is the new Excel**
+10. **AI is the new Excel**
    Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates.
 
 ## Demo Design
@@ -120,35 +123,37 @@ The new demo lowers cognitive load. The room can see action execution, cross-doc
 5. About Superlinear
 6. Narrative map
 7. Part I: operating shift
-8. The third interface
-9. The missing operating model
-10. Chat as ceiling
-11. Agentic operating model
-12. Part II: market signal
-13. Cursor / Anysphere
-14. Anthropic / Claude
-15. Verbs, not nouns
-16. Goldman Sachs
-17. Copy the right pattern
-18. Shopify and Block
-19. Part III: PM translation
-20. Investment work mechanically
-21. Contrarian view
-22. Context moves AI up the chain
-23. Context architecture
-24. Part IV: demo
-25. Demo setup
-26. Demo beat 1: action to execution
-27. Demo beat 2: action to artifact
-28. Demo beat 3: work to memory
-29. Demo standard
-30. Part V: course architecture
-31. Course wedge
-32. Course design
-33. PM AI fluency gaps
-34. What Dymon leaves with
-35. AI is the new Excel
-36. Closing
+8. Gates question
+9. GUI reveal
+10. The third interface
+11. The missing operating model
+12. Chat as ceiling
+13. Agentic operating model
+14. Part II: market signal
+15. Cursor / Anysphere
+16. Anthropic / Claude
+17. Verbs, not nouns
+18. Goldman Sachs
+19. Copy the right pattern
+20. Shopify and Block
+21. Part III: PM translation
+22. Investment work mechanically
+23. Contrarian view
+24. Context moves AI up the chain
+25. Context architecture
+26. Part IV: demo
+27. Demo setup
+28. Demo beat 1: action to execution
+29. Demo beat 2: action to artifact
+30. Demo beat 3: work to memory
+31. Demo standard
+32. Part V: course architecture
+33. Course wedge
+34. Course design
+35. PM AI fluency gaps
+36. What Dymon leaves with
+37. AI is the new Excel
+38. Closing
 
 ## Delivery Notes
 
