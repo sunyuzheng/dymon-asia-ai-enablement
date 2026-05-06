@@ -94,7 +94,7 @@ Land the Dymon synthesis: copy AI-native speed; keep finance-grade source discip
 
 ## Slide 17 — Part III
 
-Move from market proof to course promise. The course is not about AI awareness. It is about closing the capability gap between normal chat use and the working standard visible inside AI-native teams.
+Move from market proof to course promise. The course is not about AI awareness. It closes the gap between having model access and getting leverage from AI in real work.
 
 ## Slide 18 — Five Gaps
 
@@ -126,7 +126,7 @@ This is the end of the course section. From here, translate the capability into 
 
 ## Slide 23 — Part IV
 
-Reset the room: now that we have described the capability, ask what it means for PMs. The scarce layers are filtering, mechanism, decision, sizing, and follow-through.
+Reset the room: now that we have described the capability, apply it to PM work. The scarce layers are filtering, mechanism, decision, sizing, and follow-through.
 
 ## Slide 24 — Investment Work, Mechanically
 
