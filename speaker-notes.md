@@ -44,6 +44,8 @@ Our students range from developers at OpenAI to business operators to college st
 
 So rest assured: you are hearing this from actual builders who apply AI in practice and teach it to people in Silicon Valley.
 
+If you want to see more public reviews after the session, the Maven page is linked here.
+
 ## Slide 6 — Narrative Map
 
 Here is the path for the session.
