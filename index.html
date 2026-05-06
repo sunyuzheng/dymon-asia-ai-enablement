@@ -54,6 +54,86 @@ html.booting .slide { transition: none !important; }
 #prog { position: fixed; bottom: 0; left: 0; height: 3px; background: var(--gold); z-index: 20; transition: width .26s ease; }
 #counter { position: fixed; right: 26px; bottom: 18px; font-size: 11px; color: var(--muted); letter-spacing: .08em; z-index: 20; }
 #hint { position: fixed; left: 26px; bottom: 18px; font-size: 11px; color: #a2aab8; z-index: 20; }
+.speaker-panel {
+  position: fixed;
+  right: 24px;
+  top: 24px;
+  bottom: 24px;
+  width: min(560px, calc(100vw - 48px));
+  z-index: 80;
+  display: none;
+  flex-direction: column;
+  background: rgba(15, 24, 39, .96);
+  color: #f6f8fb;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+  padding: 22px;
+}
+.speaker-panel.open { display: flex; }
+.speaker-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+.speaker-kicker {
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #b8c3d6;
+  font-weight: 700;
+}
+.speaker-title {
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+.speaker-timer {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 20px;
+  color: #f0d27a;
+  white-space: nowrap;
+}
+.speaker-body {
+  overflow: auto;
+  padding-right: 8px;
+  flex: 1;
+}
+.speaker-body p {
+  font-size: 21px;
+  line-height: 1.45;
+  color: #f4f7fb;
+  margin-bottom: 18px;
+}
+.speaker-next {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.16);
+  color: #b8c3d6;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.speaker-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.speaker-controls button {
+  border: 1px solid rgba(255,255,255,.24);
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border-radius: 4px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.speaker-controls button:hover { background: rgba(255,255,255,.16); }
 .topline {
   position: absolute;
   top: 42px;
@@ -903,7 +983,24 @@ p, li {
 </div>
 <div id="prog" style="width:3.45%"></div>
 <div id="counter">1 / 29</div>
-<div id="hint">← → or click to navigate</div>
+<div id="hint">← → navigate · S speaker notes</div>
+<aside id="speakerPanel" class="speaker-panel" aria-hidden="true">
+  <div class="speaker-head">
+    <div>
+      <div id="speakerKicker" class="speaker-kicker">Slide 1 / 29</div>
+      <div id="speakerTitle" class="speaker-title">Speaker notes</div>
+    </div>
+    <div id="speakerTimer" class="speaker-timer">00:00</div>
+  </div>
+  <div id="speakerBody" class="speaker-body"></div>
+  <div id="speakerNext" class="speaker-next"></div>
+  <div class="speaker-controls">
+    <button id="speakerPrev" type="button">Prev</button>
+    <button id="speakerNextBtn" type="button">Next</button>
+    <button id="speakerReset" type="button">Reset timer</button>
+    <button id="speakerClose" type="button">Close</button>
+  </div>
+</aside>
 
 <script>
 (function () {
@@ -912,10 +1009,192 @@ p, li {
   var total = slides.length;
   var cur = 0;
   var busy = false;
+  var speakerNotes = [
+`Good morning. Today I want to make one argument.
+
+AI is not just another productivity tool. It is becoming a new interface between human judgment and compute.
+
+For portfolio managers, the practical question is: how do we use natural language to dispatch work, preserve context, and compound judgment?`,
+`Let me start with a quick question.
+
+Bill Gates recently put AI in the same category as only one earlier technology. What do you think that earlier technology was?
+
+Most people guess the internet, mobile, or cloud. Those are reasonable answers. But the answer is more specific, and more interesting.`,
+`The answer is GUI: the graphical user interface.
+
+GUI changed who could operate a computer. You no longer had to speak the machine's language.
+
+AI is similar, but larger. Natural language now lets us command general-purpose work: search, write, analyze, execute, and connect tools.`,
+`For PMs, this matters because the work is not just reading and writing.
+
+A PM coordinates context, makes judgment calls, delegates follow-up, and turns incomplete information into action.
+
+AI becomes powerful when those moves can be specified, inspected, and reused, instead of repeated manually every day.`,
+`A quick word on why we are teaching this.
+
+My background sits across economics, data science, experimentation, and AI-native building: Cornell economics, Meta, Amazon, Tencent, Statsig, and Superlinear.
+
+The point is not biography. The point is that this training comes from data work, product judgment, experimentation systems, and teaching operators how to use AI in real workflows.`,
+`Here is the path for the session.
+
+First, we frame AI as the third interface. Then we discuss why the operating model matters.
+
+After that, we look at market signals, explain what this course trains, translate it into PM workflow, and use Yan's demo to make the pattern concrete.`,
+`Part one is about the dispatch layer.
+
+Natural language is valuable only when it moves work. If it just produces text, the human still becomes the middleware.
+
+The real question is: can language coordinate tools, context, artifacts, review, and memory?`,
+`Think about the three interfaces.
+
+GUI made specific tasks accessible. Programming is general, but requires technical fluency. Natural language is both low-barrier and general-purpose.
+
+But the interface alone is not enough. Value comes from context, tool access, verification, and operating habits.`,
+`New technology often disappoints when we put it inside the old workflow.
+
+That is the point of this slide. A new interface with an old operating model creates limited leverage.
+
+The work has to be redesigned around what the technology is now able to do.`,
+`Daily work is the right wedge because it repeats.
+
+Meetings, notes, follow-ups, reviews, and handoffs are not glamorous. But they are where actions get missed, opportunities disappear, and context leaks.
+
+If we can fix that layer, people feel the value immediately, and they start learning the deeper craft.`,
+`Chat is useful, but it has a ceiling.
+
+The user supplies context, watches the process, copies outputs, moves between tools, and remembers what happened last time.
+
+So the system feels intelligent, but the workflow is still shallow. The human is still the pipeline.`,
+`The agentic model changes the role of the human.
+
+The loop is: specify, retrieve, act, inspect, and persist.
+
+The human does not disappear. The human becomes the specifier, reviewer, and judge. That is the shift we want people to practice.`,
+`Now, why look at the market?
+
+These are not random company examples. Developers are the lead market because their work already has files, tools, tests, and review loops.
+
+That makes coding the clearest place to observe agentic work before translating the pattern to PM work.`,
+`Cursor is the speed signal.
+
+The point is not that developer tools are hot. The point is that a high-value profession can move very quickly when AI becomes part of the daily work surface.
+
+The market is pricing workflow capture, not just seat-based software.`,
+`Claude Code shows the operating pattern.
+
+Strong users are not just asking for snippets. They specify the task, let the agent work inside the environment, inspect the diff, tighten tests, and preserve reusable patterns.
+
+The new craft is not typing every line. It is controlling the loop.`,
+`The second signal is that incumbents are acting too.
+
+Goldman points to supervised agents in high-stakes work. Shopify makes AI proficiency part of resource allocation. Block is thinking about intelligence layers and operating systems.
+
+The synthesis for Dymon is simple: copy the AI-native speed, but keep finance-grade review and discipline.`,
+`This is where the course comes in.
+
+The goal is not AI awareness. Everyone already knows AI is important.
+
+The goal is to close the gap between having access to the model and getting real leverage from AI in daily work.`,
+`There are five gaps.
+
+Output quality. Failure diagnosis. Full-task delegation. Compounding memory. And new capability.
+
+Most smart people do not feel AI's full power because they are still using it in chat mode. The gap is no longer model access. It is control of the capability.`,
+`We teach verbs, not nouns.
+
+Nouns are model names, tools, RAG, MCP, agents, and benchmarks. They are useful vocabulary, but they are not the craft.
+
+The craft is specifying, decomposing, delegating, inspecting, testing, revising, documenting, and reusing.`,
+`Jay's Excel analogy is useful because it says three things at once.
+
+AI is becoming table stakes. It is learnable by business people. And it is still not trivial.
+
+Opening Excel is easy. Building a good model is hard. AI has the same shape.`,
+`The course follows that learning curve.
+
+Session one: run a complete work loop. Session two: package judgment as context. Session three: turn the workflow into infrastructure.
+
+The goal is to move people from AI users to workflow builders.`,
+`What does Dymon leave with?
+
+Not just prompts. A starter axiom library, personal PM context files, reusable workflow skills, a context ledger pattern, team context architecture, and a support loop.
+
+This is the first operating layer for making AI useful in real work.`,
+`Now let's apply the capability to PM work.
+
+The scarce part of investment work is not access to public information.
+
+The scarce part is filtering, mechanism, judgment, sizing, follow-through, and knowing when your view is actually different from consensus.`,
+`Mechanically, a PM turns information into a decision.
+
+Information becomes signal. Signal becomes mechanism. Mechanism becomes judgment. Judgment becomes a position that can be monitored and revised.
+
+AI that only summarizes information helps at the least scarce part of the chain.`,
+`Good PMs get paid for the correct contrarian view.
+
+Not disagreement for its own sake. A useful contrarian view is independent reasoning under pressure to conform.
+
+And that view does not come from abstract intelligence alone. It comes from intelligence plus lived context, reasoning judgment, and taste.`,
+`This is why context matters so much.
+
+One-off research can give you coverage: a comprehensive summary, sources, and consensus framing.
+
+But context-aware workflow can move AI into judgment: what matters now, what your source hierarchy is, what failure modes you care about, and what would make an insight actionable.`,
+`Context is the operating system of judgment.
+
+Source hierarchy, captured context, world model, variant lens, and action standard all change the output.
+
+The highest-value context often comes from meetings, calls, objections, follow-ups, and prior decisions. Those are exactly the things that leak every day unless the workflow captures them.`,
+`Yan's demo is simple on purpose.
+
+Watch three things. First, language dispatches tools. Second, context changes the output. Third, work leaves memory.
+
+The strong point is not automation for its own sake. It is that context becomes reusable, so future AI can work with what the team has already learned.`,
+`The goal is context that compounds.
+
+At the practical level, that means less time lost to coordination and fewer missed actions.
+
+At the strategic level, it means the judgment context of each PM and the firm starts to accumulate. That is what makes future AI more useful.`
+  ];
+  var noteTitles = slides.map(function (s, i) {
+    var h = s.querySelector("h1, h2, .bigline");
+    return h ? h.textContent.trim() : "Slide " + (i + 1);
+  });
+  var speakerPanel = document.getElementById("speakerPanel");
+  var speakerKicker = document.getElementById("speakerKicker");
+  var speakerTitle = document.getElementById("speakerTitle");
+  var speakerBody = document.getElementById("speakerBody");
+  var speakerNext = document.getElementById("speakerNext");
+  var speakerTimer = document.getElementById("speakerTimer");
+  var startTime = Date.now();
+  function fmt(ms) {
+    var totalSeconds = Math.floor(ms / 1000);
+    var minutes = Math.floor(totalSeconds / 60);
+    var seconds = totalSeconds % 60;
+    return String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+  }
+  function renderSpeaker() {
+    speakerKicker.textContent = "Slide " + (cur + 1) + " / " + total;
+    speakerTitle.textContent = noteTitles[cur];
+    speakerBody.innerHTML = "";
+    (speakerNotes[cur] || "").split(/\n\n+/).forEach(function (para) {
+      var p = document.createElement("p");
+      p.textContent = para.trim();
+      speakerBody.appendChild(p);
+    });
+    speakerNext.textContent = cur + 1 < total ? "Next: " + noteTitles[cur + 1] : "End of deck";
+  }
+  function toggleSpeaker(force) {
+    var open = typeof force === "boolean" ? force : !speakerPanel.classList.contains("open");
+    speakerPanel.classList.toggle("open", open);
+    speakerPanel.setAttribute("aria-hidden", open ? "false" : "true");
+    if (open) renderSpeaker();
+  }
   function update() {
     document.getElementById("prog").style.width = (((cur + 1) / total) * 100).toFixed(2) + "%";
     document.getElementById("counter").textContent = (cur + 1) + " / " + total;
     window.location.hash = "slide-" + (cur + 1);
+    renderSpeaker();
   }
   function go(n) {
     if (busy || n === cur || n < 0 || n >= total) return;
@@ -950,11 +1229,18 @@ p, li {
     go(idx);
   });
   document.addEventListener("keydown", function (e) {
+    if (e.key === "s" || e.key === "S") { e.preventDefault(); toggleSpeaker(); return; }
+    if (e.key === "Escape" && speakerPanel.classList.contains("open")) { e.preventDefault(); toggleSpeaker(false); return; }
     if (["ArrowRight", "ArrowDown", "PageDown"].indexOf(e.key) !== -1 || e.code === "Space") { e.preventDefault(); go(cur + 1); }
     if (["ArrowLeft", "ArrowUp", "PageUp"].indexOf(e.key) !== -1) { e.preventDefault(); go(cur - 1); }
     if (e.key === "Home") { e.preventDefault(); go(0); }
     if (e.key === "End") { e.preventDefault(); go(total - 1); }
   });
+  document.getElementById("speakerPrev").addEventListener("click", function () { go(cur - 1); });
+  document.getElementById("speakerNextBtn").addEventListener("click", function () { go(cur + 1); });
+  document.getElementById("speakerReset").addEventListener("click", function () { startTime = Date.now(); speakerTimer.textContent = "00:00"; });
+  document.getElementById("speakerClose").addEventListener("click", function () { toggleSpeaker(false); });
+  setInterval(function () { speakerTimer.textContent = fmt(Date.now() - startTime); }, 1000);
   document.getElementById("deck").addEventListener("click", function (e) {
     if (e.target.closest("a, button")) return;
     go(e.clientX > window.innerWidth * 0.25 ? cur + 1 : cur - 1);
