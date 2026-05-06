@@ -4,19 +4,19 @@ These notes are written as a readable script. They are intentionally concise: us
 
 ## Slide 1 — The Third Interface For Investment Research
 
-Good morning. Today I want to make one argument.
+Good morning. Let me start with the purpose of this talk.
 
-AI is not just another productivity tool. It is becoming a new interface between human judgment and compute.
+Portfolio managers have seen a lot of AI tools. Everyone knows AI is important. But for many people, the result is more confusion and anxiety, not less.
 
-For portfolio managers, the practical question is: how do we use natural language to dispatch work, preserve context, and compound judgment?
+AI is amazing, but the work itself often has not changed much. Today we want to change that: not by introducing another tool, but by showing the right way to use AI as a new interface for work.
 
 ## Slide 2 — Opening Question
 
 Let me start with a quick question.
 
-Bill Gates recently put AI in the same category as only one earlier technology. What do you think that earlier technology was?
+Bill Gates wrote this in 2023, right after the launch of GPT-4. He put AI in the same category as only one earlier technology.
 
-Most people guess the internet, mobile, or cloud. Those are reasonable answers. But the answer is more specific, and more interesting.
+What do you think that earlier technology was? Most people guess the internet, mobile, or cloud. The fact that he said this so early makes the observation more interesting.
 
 ## Slide 3 — The Reveal
 
@@ -28,9 +28,9 @@ AI is similar, but larger. Natural language now lets us command general-purpose 
 
 ## Slide 4 — PM Implication
 
-For PMs, this matters because the work is not just reading and writing.
+Here is the one-sentence summary: with a new engine, we need a new workflow around it.
 
-A PM coordinates context, makes judgment calls, delegates follow-up, and turns incomplete information into action.
+For PMs, this matters because the work is not just reading and writing. A PM coordinates context, makes judgment calls, delegates follow-up, and turns incomplete information into action.
 
 AI becomes powerful when those moves can be specified, inspected, and reused, instead of repeated manually every day.
 
@@ -38,9 +38,11 @@ AI becomes powerful when those moves can be specified, inspected, and reused, in
 
 A quick word on why we are teaching this.
 
-My background sits across economics, data science, experimentation, and AI-native building: Cornell economics, Meta, Amazon, Tencent, Statsig, and Superlinear.
+Our vantage point is that we teach a very diverse, but frontier, group of people.
 
-The point is not biography. The point is that this training comes from data work, product judgment, experimentation systems, and teaching operators how to use AI in real workflows.
+Our students range from developers at OpenAI to business operators to college students. The surprising thing is that all of them benefit when the training is built around real work instead of tool demos.
+
+So rest assured: you are hearing this from actual builders who apply AI in practice and teach it to people in Silicon Valley.
 
 ## Slide 6 — Narrative Map
 
@@ -76,11 +78,11 @@ The work has to be redesigned around what the technology is now able to do.
 
 ## Slide 10 — The Daily-Work Wedge
 
-Daily work is the right wedge because it repeats.
+A common question from our non-technical students is: I know AI can build great software, but my job is not to build an app. So how do I benefit from AI?
 
-Meetings, notes, follow-ups, reviews, and handoffs are not glamorous. But they are where actions get missed, opportunities disappear, and context leaks.
+The answer is daily work: automation and context. Meetings, notes, follow-ups, reviews, and handoffs are where actions get missed, opportunities disappear, and context leaks.
 
-If we can fix that layer, people feel the value immediately, and they start learning the deeper craft.
+But like the factory story, the new workflow is hard to see when you have optimized your work around the old technology. That is where our training creates value.
 
 ## Slide 11 — Chat As Ceiling
 
@@ -90,17 +92,21 @@ The user supplies context, watches the process, copies outputs, moves between to
 
 So the system feels intelligent, but the workflow is still shallow. The human is still the pipeline.
 
+At the simplest level, the action is this: replace chat with agents.
+
 ## Slide 12 — Agentic Operating Model
 
 The agentic model changes the role of the human.
 
 The loop is: specify, retrieve, act, inspect, and persist.
 
-The human does not disappear. The human becomes the specifier, reviewer, and judge. That is the shift we want people to practice.
+The human does not disappear. The human becomes the specifier, reviewer, and judge.
+
+That is where the 10x leverage comes from: one person can coordinate more context, more tools, more artifacts, and more follow-through without personally becoming the bottleneck.
 
 ## Slide 13 — Market Signal
 
-Now, why look at the market?
+Now, let's look at some actual signals from the market.
 
 These are not random company examples. Developers are the lead market because their work already has files, tools, tests, and review loops.
 
@@ -144,7 +150,9 @@ There are five gaps.
 
 Output quality. Failure diagnosis. Full-task delegation. Compounding memory. And new capability.
 
-Most smart people do not feel AI's full power because they are still using it in chat mode. The gap is no longer model access. It is control of the capability.
+Many smart people do not feel AI's full power because they do not have access to observe how AI-native industries actually use it.
+
+The change is also compounding, organizational, and large, so it is hard to get started. But you do not close these gaps by introducing one more tool. You close them by changing how the work is done.
 
 ## Slide 19 — Verbs, Not Nouns
 
@@ -156,7 +164,9 @@ The craft is specifying, decomposing, delegating, inspecting, testing, revising,
 
 ## Slide 20 — AI Is The New Excel
 
-Jay's Excel analogy is useful because it says three things at once.
+Jay's analogy is: AI is the new Excel.
+
+I think this analogy is great because it says three things at once.
 
 AI is becoming table stakes. It is learnable by business people. And it is still not trivial.
 
@@ -176,7 +186,9 @@ What does Dymon leave with?
 
 Not just prompts. A starter axiom library, personal PM context files, reusable workflow skills, a context ledger pattern, team context architecture, and a support loop.
 
-This is the first operating layer for making AI useful in real work.
+This will immediately save time, make people more productive, and capture important context.
+
+But more importantly, it shifts mindset and habits. Those are more durable than any specific method or tool.
 
 ## Slide 23 — Part IV
 
@@ -220,9 +232,9 @@ The highest-value context often comes from meetings, calls, objections, follow-u
 
 ## Slide 28 — What To Watch In Yan's Demo
 
-Yan's demo is simple on purpose.
+Yan's demo hides a lot of technical complexity, so it appears simple.
 
-Watch three things. First, language dispatches tools. Second, context changes the output. Third, work leaves memory.
+I would invite you to watch for three things. First, language dispatches tools. Second, context changes the output. Third, work leaves memory.
 
 The strong point is not automation for its own sake. It is that context becomes reusable, so future AI can work with what the team has already learned.
 
