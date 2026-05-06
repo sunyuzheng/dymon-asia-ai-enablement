@@ -138,15 +138,19 @@ Keep the Naval point. Valuable contrarian thinking is independent reasoning unde
 
 Land the three bullets: understand consensus, find the correct contrarian view, turn it into a tradeable decision.
 
+Add the bridge: a correct contrarian view is not abstract intelligence alone. It is intelligence plus private context, reasoning judgment, and taste.
+
 ## Slide 26 — Context Moves AI Up The Chain
 
 Explain one-off research as useful coverage. Context-aware workflow moves toward judgment and action.
 
-The competitive edge is not model access alone. It is the context architecture around judgment.
+The competitive edge is not model access alone. It is the private context architecture around judgment.
 
 ## Slide 27 — Context Architecture
 
-Move through the rows quickly: source hierarchy, world model, variant lens, action standard.
+Move through the rows quickly: source hierarchy, captured context, world model, variant lens, action standard.
+
+Emphasize captured context: meetings, calls, objections, follow-ups, and prior decisions are often the highest-value inputs, but they leak every day unless the workflow preserves them.
 
 Transition: now make it tangible with Yan's demo.
 
@@ -156,6 +160,8 @@ Keep this short. Yan will own the demo mechanics. Your job is to set the standar
 
 Emphasize three learning points: language dispatches tools, context changes the output, and work leaves memory. The demo is not about a clever one-off automation; it is a preview of the operating pattern behind the course.
 
+The strong point: context becomes reusable. What normally disappears after a meeting becomes structured memory that future AI can use.
+
 ## Slide 29 — Closing
 
-End on operational compounding: fewer missed actions, fewer missed opportunities, and a context system that compounds with daily work.
+End on context compounding. The practical win is less coordination time and fewer missed actions. The strategic win is that the judgment context of each PM and the firm starts to accumulate, making future AI work better.
