@@ -13,7 +13,7 @@ This project is a static HTML presentation for a Dymon Asia briefing on AI enabl
 
 The current deck argues that AI is the third interface between humans and compute. For PMs, the practical skill is learning to use natural language to dispatch compute, tools, context, and follow-through around real investment work.
 
-The current deck is `PM AI Fluency Training` and contains 37 slides.
+The current deck is `PM AI Fluency Training` and contains 33 slides.
 
 ## Audience
 
@@ -48,13 +48,13 @@ Context:
 4. Explain daily work as the fastest wedge for learning the craft.
 5. Show market signals from AI-native firms and governed incumbents.
 6. Translate the shift into PM judgment and action.
-7. Run Yan's onboarding process review demo in three beats: capture, execute, compound.
+7. Set up what to watch in Yan's onboarding process review demo without duplicating his demo walkthrough.
 8. Explain how the course trains Dymon PMs to build similar workflows.
-9. Close with Jay's "AI is the new Excel" learning frame.
+9. Close with Jay's "AI is the new Excel" learning frame and its PM implications.
 
 ## Demo Design
 
-The live demo uses an internal onboarding process review transcript, not a market research question.
+Yan's live demo uses an internal onboarding process review transcript, not a market research question. The deck only gives the audience one overview slide for what to watch.
 
 The three beats:
 
@@ -69,6 +69,7 @@ The demo is judged by captured work, not prose quality:
 - less lost context;
 - hands-off execution across tools;
 - transferable course method.
+- the habit being trained: specify, delegate, inspect, persist.
 
 ## Important Files
 
@@ -76,7 +77,7 @@ The demo is judged by captured work, not prose quality:
   The presentation deck. It is self-contained HTML/CSS/JS with local assets.
 
 - `speaker-notes.md`
-  Page-by-page speaker notes for all 37 slides. These are designed for live delivery, not as a transcript.
+  Page-by-page speaker notes for all 33 slides. These are designed for live delivery, not as a transcript.
 
 - `docs/project-summary.md`
   Summary of the project, deck logic, major decisions, and current conclusions.

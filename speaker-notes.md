@@ -130,62 +130,44 @@ Move through the rows quickly: source hierarchy, world model, variant lens, acti
 
 Transition: now make it tangible with Yan's demo.
 
-## Slide 25 — Part IV
+## Slide 25 — What To Watch In Yan's Demo
 
-Reset attention. The demo is intentionally ordinary because daily leakage is easiest to see in ordinary workflow.
+Keep this short. Yan will own the demo mechanics. Your job is to set the standard for what the audience should notice.
 
-## Slide 26 — Demo Setup
+Emphasize three learning points: language dispatches tools, context changes the output, and work leaves memory. The demo is not about a clever one-off automation; it is a preview of the habit the course trains.
 
-Yan should introduce the transcript in one sentence: "This is an internal onboarding process review meeting."
-
-The first prompt is familiar: summarize and identify action items.
-
-## Slide 27 — Demo Beat 1
-
-Read Yan's instruction. Stress owner, counterpart, time window, meeting length, and background email.
-
-The important observation is hands-off execution across calendar, email, and notification.
-
-## Slide 28 — Demo Beat 2
-
-This beat proves cross-document context. The one-pager needs the Tom onboarding case, ABC Capital KYC correspondence, and SOP 4.2.
-
-Point out source links and the Google Doc/share/email sequence.
-
-## Slide 29 — Demo Beat 3
-
-Explain the context ledger: people, topics, source links, owners, derived artifacts, and status.
-
-Use pivot examples: China energy context, Indonesian coal recurring across multiple people, and rows where no artifact exists.
-
-## Slide 30 — Demo Standard
-
-Judge captured work: actions, opportunities, context, hands-off execution, and transfer into Dymon workflows.
-
-## Slide 31 — Part V
+## Slide 26 — Part V
 
 Yan's demo is the reference case. The course value is helping PMs build comparable workflows around their own research, meetings, notes, and delegation patterns.
 
-## Slide 32 — Course Wedge
+## Slide 27 — Course Wedge
 
 Start with one real workflow. Prove individual utility first, then package the useful pieces into reusable skills and context files.
 
-## Slide 33 — Course Design
+## Slide 28 — Course Design
 
 Session 1: complete work loop. Session 2: package judgment as context. Session 3: turn work into infrastructure.
 
-## Slide 34 — PM AI Fluency Gaps
+## Slide 29 — PM AI Fluency Gaps
 
 Walk the five gaps quickly. The most important ones for this audience are full-task delegation and compounding memory.
 
-## Slide 35 — What Dymon Leaves With
+## Slide 30 — What Dymon Leaves With
 
 Describe this as a first operating layer: axiom library, PM context files, reusable workflow skills, context ledger pattern, team context architecture, and support loop.
 
-## Slide 36 — AI Is The New Excel
+## Slide 31 — AI Is The New Excel
 
 Use Jay's analogy to make the learning path obvious. Excel became table stakes, but real modeling required training and practice. AI has the same shape.
 
-## Slide 37 — Closing
+Land the three meanings: table stakes, learnable, deep craft.
+
+## Slide 32 — What It Means For PMs
+
+This is the useful piece from the archived version. Make the analogy operational: business people learned Excel through real models, repeated practice, and templates; PMs will learn AI through real workflows, failure diagnosis, skills, and context files.
+
+The purpose is to make AI feel accessible without making it feel trivial.
+
+## Slide 33 — Closing
 
 End on operational compounding: fewer missed actions, fewer missed opportunities, and a context system that compounds with daily work.

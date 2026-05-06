@@ -2,7 +2,7 @@
 
 ## Current Output
 
-This project contains a 37-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
+This project contains a 33-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
 
 Production URL:
 
@@ -61,17 +61,17 @@ The model already knows a large amount of public information. The valuable layer
    The deck keeps the Naval/NFX contrarian framing, but removes the longer efficient-market detour. The point is to sharpen correct contrarian judgment, not to celebrate disagreement.
 
 9. **Onboarding process review demo**
-   The old live market-question demo was replaced. The new demo has lower cognitive load and makes the value visible without asking the audience to compare two long reports.
+   Yan owns the live demo. The deck now uses one overview slide to tell the audience what to watch: language dispatching tools, context changing output, and work leaving memory.
 
 10. **Course architecture**
     The course trains the craft: specify, retrieve, delegate, inspect, package, and rerun. It helps Dymon PMs build similar workflows around their own work.
 
 11. **AI is the new Excel**
-    Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates.
+    Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates. The deck restores the archived follow-up slide explaining what the analogy means for PMs.
 
 ## Demo Design
 
-The current live demo uses an internal onboarding process review transcript.
+The current live demo uses an internal onboarding process review transcript. Yan will present the mechanics; the deck keeps only one "what to watch" slide so the main presentation does not duplicate the demo.
 
 ### Beat 1: Capture
 
@@ -119,7 +119,7 @@ That created two problems:
 - the audience would need to read and evaluate two long reports in real time;
 - the comparison depended too much on domain judgment and could invite disagreement about the better answer.
 
-The new demo lowers cognitive load. The room can see action execution, cross-document handoff, and context capture directly.
+The new demo lowers cognitive load. The room can see action execution, cross-document handoff, and context capture directly. The deck tells the audience to watch for the operating habit: specify, delegate, inspect, persist.
 
 ## Current Slide Structure
 
@@ -147,19 +147,15 @@ The new demo lowers cognitive load. The room can see action execution, cross-doc
 22. Contrarian view
 23. Context moves AI up the chain
 24. Context architecture
-25. Part IV: demo
-26. Demo setup
-27. Demo beat 1: action to execution
-28. Demo beat 2: action to artifact
-29. Demo beat 3: work to memory
-30. Demo standard
-31. Part V: course architecture
-32. Course wedge
-33. Course design
-34. PM AI fluency gaps
-35. What Dymon leaves with
-36. AI is the new Excel
-37. Closing
+25. What to watch in Yan's demo
+26. Part V: course architecture
+27. Course wedge
+28. Course design
+29. PM AI fluency gaps
+30. What Dymon leaves with
+31. AI is the new Excel
+32. What it means for PMs
+33. Closing
 
 ## Delivery Notes
 
