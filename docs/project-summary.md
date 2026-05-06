@@ -2,7 +2,7 @@
 
 ## Current Output
 
-This project contains a 38-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
+This project contains a 37-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
 
 Production URL:
 
@@ -14,53 +14,60 @@ https://dymon-asia-ai-enablement.vercel.app/speaker-notes.md
 
 ## Current Goal
 
-The deck is designed for a practical, senior, impatient Dymon Asia audience. It avoids generic AI hype and focuses on a concrete operating question:
+The deck is designed for a practical, senior, impatient Dymon Asia audience. It avoids generic AI hype and opens with a higher-level frame:
 
-How can PMs use AI to capture missed actions, missed opportunities, and missed context, then turn daily work into workflows that compound?
+AI is becoming the third interface between humans and compute.
+
+For PMs, the practical skill is learning to use natural language to dispatch compute, tools, context, and follow-through around real investment work.
 
 ## Current Thesis
 
-AI leverage for PMs begins when daily work stops leaking value.
+Natural language is becoming a dispatch layer for PM work.
+
+Daily work is the wedge, not the ceiling. The immediate measurable win is fewer missed actions, missed opportunities, and lost context. The deeper skill is learning how to command compute and turn repeated work into compounding systems.
 
 The model already knows a large amount of public information. The valuable layer is the operating system around the model:
 
-- what work gets captured;
-- what action gets delegated;
+- what judgment gets encoded;
 - what context gets retrieved;
+- what action gets delegated;
 - what artifacts get created;
-- what judgment and follow-up persist into future work.
+- what follow-up persists into future work.
 
 ## Narrative Structure
 
-1. **Throughline**
-   Daily PM work leaks value through missed actions, missed opportunities, and lost context.
+1. **Gates / GUI opening**
+   The deck starts with the Bill Gates question because it engages the room and frames AI as an interface shift, not just another information tool.
 
-2. **Demo preview**
-   Yan will demonstrate one internal onboarding process review transcript turning into execution and memory.
+2. **Third interface**
+   GUI changed who could operate compute. AI changes what can be commanded by natural language.
 
-3. **Gates GUI question**
-   The deck reintroduces the Bill Gates question because it engages the room and shows that the category shift is less obvious than it first appears.
+3. **PM implication**
+   For PMs, the new skill is commanding work that used to require manual coordination: judgment, retrieval, drafting, scheduling, notification, artifact creation, and memory.
 
-4. **Operating shift**
-   Natural language becomes valuable when it dispatches work across tools, not when it merely produces chat answers.
+4. **Daily-work wedge**
+   Actions, opportunities, and context are execution-level details, but they are the right training wedge because they repeat every day and make value leakage visible.
 
-5. **Market signal**
+5. **Operating model**
+   Chat keeps the human as middleware. Agentic workflows require specification, retrieval, action, inspection, and persistence.
+
+6. **Market signal**
    Cursor, Anthropic/Claude, Goldman Sachs, Shopify, and Block show the shift from tool adoption to workflow and operating-model redesign.
 
-6. **PM translation**
+7. **PM translation**
    Investment work moves from information to signal, mechanism, judgment, and action. AI needs context to assist the scarce parts of that chain.
 
-7. **Contrarian judgment**
+8. **Contrarian judgment**
    The deck keeps the Naval/NFX contrarian framing, but removes the longer efficient-market detour. The point is to sharpen correct contrarian judgment, not to celebrate disagreement.
 
-8. **Onboarding process review demo**
+9. **Onboarding process review demo**
    The old live market-question demo was replaced. The new demo has lower cognitive load and makes the value visible without asking the audience to compare two long reports.
 
-9. **Course architecture**
-   The course trains the craft: specify, retrieve, delegate, inspect, package, and rerun. It helps Dymon PMs build similar workflows around their own work.
+10. **Course architecture**
+    The course trains the craft: specify, retrieve, delegate, inspect, package, and rerun. It helps Dymon PMs build similar workflows around their own work.
 
-10. **AI is the new Excel**
-   Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates.
+11. **AI is the new Excel**
+    Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates.
 
 ## Demo Design
 
@@ -117,43 +124,42 @@ The new demo lowers cognitive load. The room can see action execution, cross-doc
 ## Current Slide Structure
 
 1. Cover
-2. Throughline
-3. What this session is for
-4. Demo preview
+2. Gates opening question
+3. GUI reveal / third-interface frame
+4. PM implication
 5. About Superlinear
 6. Narrative map
-7. Part I: operating shift
-8. Gates question
-9. GUI reveal
-10. The third interface
-11. The missing operating model
-12. Chat as ceiling
-13. Agentic operating model
-14. Part II: market signal
-15. Cursor / Anysphere
-16. Anthropic / Claude
-17. Verbs, not nouns
-18. Goldman Sachs
-19. Copy the right pattern
-20. Shopify and Block
-21. Part III: PM translation
-22. Investment work mechanically
-23. Contrarian view
-24. Context moves AI up the chain
-25. Context architecture
-26. Part IV: demo
-27. Demo setup
-28. Demo beat 1: action to execution
-29. Demo beat 2: action to artifact
-30. Demo beat 3: work to memory
-31. Demo standard
-32. Part V: course architecture
-33. Course wedge
-34. Course design
-35. PM AI fluency gaps
-36. What Dymon leaves with
-37. AI is the new Excel
-38. Closing
+7. Part I: dispatch layer
+8. Third interface table
+9. Missing operating model
+10. Daily-work wedge
+11. Chat as ceiling
+12. Agentic operating model
+13. Part II: market signal
+14. Cursor / Anysphere
+15. Anthropic / Claude
+16. Verbs, not nouns
+17. Goldman Sachs
+18. Copy the right pattern
+19. Shopify and Block
+20. Part III: PM translation
+21. Investment work mechanically
+22. Contrarian view
+23. Context moves AI up the chain
+24. Context architecture
+25. Part IV: demo
+26. Demo setup
+27. Demo beat 1: action to execution
+28. Demo beat 2: action to artifact
+29. Demo beat 3: work to memory
+30. Demo standard
+31. Part V: course architecture
+32. Course wedge
+33. Course design
+34. PM AI fluency gaps
+35. What Dymon leaves with
+36. AI is the new Excel
+37. Closing
 
 ## Delivery Notes
 
@@ -161,11 +167,11 @@ The speaker notes live in `speaker-notes.md`.
 
 Recommended delivery style:
 
-- direct;
-- pragmatic;
-- fast-paced;
-- light on AI importance arguments;
+- high-level frame first;
+- direct and fast-paced;
+- light on generic AI importance arguments;
 - explicit about what each example proves;
+- practical once the third-interface frame is established;
 - careful to distinguish live demo output from mocked accumulated context.
 
 ## Archive
@@ -174,4 +180,10 @@ The previous version before the onboarding-demo rewrite is archived locally as:
 
 ```text
 archive/pre-onboarding-demo-20260505
+```
+
+The version before the third-interface opening rewrite is in git history at:
+
+```text
+861c825 Sharpen Dymon deck narrative
 ```

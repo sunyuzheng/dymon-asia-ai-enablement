@@ -11,9 +11,9 @@ Live deck:
 
 This project is a static HTML presentation for a Dymon Asia briefing on AI enablement for investment research and portfolio manager workflows.
 
-The current deck argues that the meaningful shift is operational: AI should help PMs capture missed actions, missed opportunities, and missed context, then turn daily work into a compounding context system.
+The current deck argues that AI is the third interface between humans and compute. For PMs, the practical skill is learning to use natural language to dispatch compute, tools, context, and follow-through around real investment work.
 
-The current deck is `v12 course briefing` and contains 38 slides.
+The current deck is `PM AI Fluency Training` and contains 37 slides.
 
 ## Audience
 
@@ -21,7 +21,9 @@ The deck is written for Dymon Asia portfolio managers and senior investment prof
 
 ## Core Thesis
 
-AI leverage for PMs begins when daily work stops leaking value.
+Natural language is becoming a new dispatch layer for PM work.
+
+Daily work is the wedge, not the ceiling:
 
 Actions:
 
@@ -40,14 +42,15 @@ Context:
 
 ## Key Narrative Arc
 
-1. Frame the leak: actions, opportunities, and context disappear in ordinary daily work.
-2. Use the Gates GUI question to make the interface shift concrete.
-3. Explain the operating shift from chat to natural-language dispatch across tools.
-4. Show market signals from AI-native firms and governed incumbents.
-5. Translate the shift into PM judgment and action.
-6. Run Yan's onboarding process review demo in three beats: capture, execute, compound.
-7. Explain how the course trains Dymon PMs to build similar workflows.
-8. Close with Jay's "AI is the new Excel" learning frame.
+1. Use the Gates GUI question to make the interface shift concrete.
+2. Define AI as the third interface between humans and compute.
+3. Translate the shift into PM work: judgment can now command compute, tools, artifacts, and memory.
+4. Explain daily work as the fastest wedge for learning the craft.
+5. Show market signals from AI-native firms and governed incumbents.
+6. Translate the shift into PM judgment and action.
+7. Run Yan's onboarding process review demo in three beats: capture, execute, compound.
+8. Explain how the course trains Dymon PMs to build similar workflows.
+9. Close with Jay's "AI is the new Excel" learning frame.
 
 ## Demo Design
 
@@ -73,7 +76,7 @@ The demo is judged by captured work, not prose quality:
   The presentation deck. It is self-contained HTML/CSS/JS with local assets.
 
 - `speaker-notes.md`
-  Page-by-page speaker notes for all 38 slides. These are designed for live delivery, not as a transcript.
+  Page-by-page speaker notes for all 37 slides. These are designed for live delivery, not as a transcript.
 
 - `docs/project-summary.md`
   Summary of the project, deck logic, major decisions, and current conclusions.

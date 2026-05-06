@@ -18,3 +18,13 @@ Usage note:
 ### Dymon Asia
 
 - Current deck asset: `assets/dymon-asia-logo.png`
+
+## Photographs
+
+### Superlinear Enterprise Training
+
+- Current slide 5 asset: `assets/doordash_speaker.jpg`
+- Source path:
+  `/Users/sunyuzheng/Desktop/superlinear/corp-training/tencent/Archive/20260315-腾讯采购-材料/doordash_speaker.jpg`
+- Dimensions: 1702 x 1276
+- Usage note: use this wide speaker-room image when the deck needs credibility and scale; use `assets/doordash_audiences.jpg` only when the image needs a tighter audience crop.
