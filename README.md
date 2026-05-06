@@ -13,7 +13,7 @@ This project is a static HTML presentation for a Dymon Asia briefing on AI enabl
 
 The current deck argues that AI is the third interface between humans and compute. For PMs, the practical skill is learning to use natural language to dispatch compute, tools, context, and follow-through around real investment work.
 
-The current deck is `PM AI Fluency Training` and contains 33 slides.
+The current deck is `PM AI Fluency Training` and contains 29 slides.
 
 ## Audience
 
@@ -46,11 +46,11 @@ Context:
 2. Define AI as the third interface between humans and compute.
 3. Translate the shift into PM work: judgment can now command compute, tools, artifacts, and memory.
 4. Explain daily work as the fastest wedge for learning the craft.
-5. Show market signals from AI-native firms and governed incumbents.
-6. Translate the shift into PM judgment and action.
-7. Set up what to watch in Yan's onboarding process review demo without duplicating his demo walkthrough.
-8. Explain how the course trains Dymon PMs to build similar workflows.
-9. Close with Jay's "AI is the new Excel" learning frame and its PM implications.
+5. Show market signals from AI-native teams and governed incumbents.
+6. Explain the course capability gap: five gaps, verb-first learning, and Jay's Excel analogy.
+7. Translate the trained capability into PM judgment workflow.
+8. Set up what to watch in Yan's onboarding process review demo without duplicating his demo walkthrough.
+9. Close on operational compounding.
 
 ## Demo Design
 
@@ -77,7 +77,7 @@ The demo is judged by captured work, not prose quality:
   The presentation deck. It is self-contained HTML/CSS/JS with local assets.
 
 - `speaker-notes.md`
-  Page-by-page speaker notes for all 33 slides. These are designed for live delivery, not as a transcript.
+  Page-by-page speaker notes for all 29 slides. These are designed for live delivery, not as a transcript.
 
 - `docs/project-summary.md`
   Summary of the project, deck logic, major decisions, and current conclusions.

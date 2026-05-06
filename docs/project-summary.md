@@ -2,7 +2,7 @@
 
 ## Current Output
 
-This project contains a 33-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
+This project contains a 29-slide HTML briefing deck for Dymon Asia, plus page-by-page speaker notes.
 
 Production URL:
 
@@ -52,22 +52,19 @@ The model already knows a large amount of public information. The valuable layer
    Chat keeps the human as middleware. Agentic workflows require specification, retrieval, action, inspection, and persistence.
 
 6. **Market signal**
-   Cursor, Anthropic/Claude, Goldman Sachs, Shopify, and Block show the shift from tool adoption to workflow and operating-model redesign.
+   Cursor and Claude Code show the lead-market pattern: production-grade agentic work built around files, tools, tests, and review loops. Goldman Sachs, Shopify, and Block show that incumbents are also turning AI into an operating rule, with governance and supervision.
 
-7. **PM translation**
+7. **Course capability**
+   The course section now comes immediately after the market signal. It explains the five gaps between chat use and real leverage, the verb-first learning method, and Jay's Excel analogy: AI is table stakes, learnable, and still a deep craft.
+
+8. **PM translation**
    Investment work moves from information to signal, mechanism, judgment, and action. AI needs context to assist the scarce parts of that chain.
 
-8. **Contrarian judgment**
+9. **Contrarian judgment**
    The deck keeps the Naval/NFX contrarian framing, but removes the longer efficient-market detour. The point is to sharpen correct contrarian judgment, not to celebrate disagreement.
 
-9. **Onboarding process review demo**
+10. **Onboarding process review demo**
    Yan owns the live demo. The deck now uses one overview slide to tell the audience what to watch: language dispatching tools, context changing output, and work leaving memory.
-
-10. **Course architecture**
-    The course trains the craft: specify, retrieve, delegate, inspect, package, and rerun. It helps Dymon PMs build similar workflows around their own work.
-
-11. **AI is the new Excel**
-    Jay's analogy frames AI as a table-stakes business skill that is learnable, but deep enough to require practice, feedback, and reusable templates. The deck restores the archived follow-up slide explaining what the analogy means for PMs.
 
 ## Demo Design
 
@@ -138,24 +135,20 @@ The new demo lowers cognitive load. The room can see action execution, cross-doc
 13. Part II: market signal
 14. Cursor / Anysphere
 15. Anthropic / Claude
-16. Verbs, not nouns
-17. Goldman Sachs
-18. Copy the right pattern
-19. Shopify and Block
-20. Part III: PM translation
-21. Investment work mechanically
-22. Contrarian view
-23. Context moves AI up the chain
-24. Context architecture
-25. What to watch in Yan's demo
-26. Part V: course architecture
-27. Course wedge
-28. Course design
-29. PM AI fluency gaps
-30. What Dymon leaves with
-31. AI is the new Excel
-32. What it means for PMs
-33. Closing
+16. Enterprise signal
+17. Part III: course capability
+18. Five gaps
+19. Verbs, not nouns
+20. AI is the new Excel
+21. Course design
+22. Course outcome
+23. Part IV: PM translation
+24. Investment work mechanically
+25. Contrarian view
+26. Context moves AI up the chain
+27. Context architecture
+28. What to watch in Yan's demo
+29. Closing
 
 ## Delivery Notes
 

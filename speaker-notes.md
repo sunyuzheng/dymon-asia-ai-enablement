@@ -74,100 +74,88 @@ Transition: show that this shift is already visible in the market.
 
 ## Slide 13 — Market Signal
 
-State the point in one sentence: leading AI-native teams redesign workflows around agents; incumbents are learning how to govern them.
+State why this chapter exists: these are not random company examples. Developers are the lead market because the work already has files, tools, tests, and review loops. That makes it the clearest place to observe agentic workflow before translating it to PM work.
 
 ## Slide 14 — Cursor / Anysphere
 
-Use the table as a speed signal. The point is that an AI workflow can become the daily environment for a high-value profession very quickly.
+Use Cursor as the speed signal. The point is not "developer tools are hot." The point is that a high-value profession can shift its daily work surface very quickly when AI is embedded into the workflow.
 
 ## Slide 15 — Anthropic / Claude
 
-Emphasize mastery. Strong users delegate loops, review outputs, tighten tests, and preserve learnings. Weak users stay at the chat/autocomplete layer.
+Use Claude Code as the operating proof. Strong users do not just ask for snippets. They specify work, let the agent operate inside the environment, inspect outputs, tighten tests, and preserve reusable patterns.
 
-## Slide 16 — Verbs, Not Nouns
+Transition: if the lead market already works this way, the natural question for Dymon is how to learn the capability without copying a startup culture blindly.
 
-Contrast vocabulary with craft. RAG, MCP, agents, and model names are useful nouns. Capability lives in verbs: specify, retrieve, delegate, inspect, test, package, rerun.
+## Slide 16 — Enterprise Signal
 
-## Slide 17 — Goldman Sachs
+Compress Goldman, Shopify, and Block into one message: incumbents are also acting, but they need governance, review, and operating discipline.
 
-Position Goldman as an adoption signal, not a simple success story. Even regulated incumbents are moving from experimentation to supervised agentic work.
+Land the Dymon synthesis: copy AI-native speed; keep finance-grade source discipline and review.
 
-## Slide 18 — Copy The Right Pattern
+## Slide 17 — Part III
 
-State the synthesis: workflow speed from AI-native companies, governance discipline from finance.
+Move from market proof to course promise. The course is not about AI awareness. It is about closing the capability gap between normal chat use and the working standard visible inside AI-native teams.
 
-For Dymon, the opportunity is not copying a startup. It is importing the workflow speed while keeping source discipline and review.
+## Slide 18 — Five Gaps
 
-## Slide 19 — Shopify And Block
+Walk the gaps quickly. They explain why many smart people still do not feel AI's full power: usable output, quality diagnosis, full-task delegation, compounding memory, and new capability.
 
-Use this as operating-model proof. Shopify makes AI a management expectation; Block pushes toward intelligence layers and shared world models.
+The important phrase: the gap is no longer model access; it is control of the capability.
 
-Transition: bring it back to PM work.
+## Slide 19 — Verbs, Not Nouns
 
-## Slide 20 — Part III
+Contrast vocabulary with craft. RAG, MCP, agents, and model names are useful nouns, but capability lives in verbs: specify, decompose, delegate, inspect, test, revise, document, reuse.
 
-PM work is not mainly a text access problem. The scarce layers are filtering, mechanism, decision, sizing, and follow-through.
+Connect to investing: this room already understands a verb-heavy craft. The course teaches the AI version of that craft.
 
-## Slide 21 — Investment Work, Mechanically
+## Slide 20 — AI Is The New Excel
+
+Use Jay's analogy to lower intimidation without trivializing the skill. Excel became table stakes, business people learned it through real work, and serious modeling still created huge skill gaps.
+
+AI has the same shape: accessible, mandatory, and deep.
+
+## Slide 21 — Course Design
+
+Describe the three sessions as a learning curve: complete work loop, packaged judgment, then infrastructure. Keep it practical and outcome-oriented.
+
+## Slide 22 — Course Outcome
+
+Describe what Dymon leaves with: axiom library, personal context files, reusable workflow skills, context ledger, team context architecture, and support loop.
+
+This is the end of the course section. From here, translate the capability into PM workflow.
+
+## Slide 23 — Part IV
+
+Reset the room: now that we have described the capability, ask what it means for PMs. The scarce layers are filtering, mechanism, decision, sizing, and follow-through.
+
+## Slide 24 — Investment Work, Mechanically
 
 Walk left to right: information, signal, mechanism, judgment, action. Summarization helps at the least scarce layer; context and workflow help climb the chain.
 
-## Slide 22 — Contrarian View
+## Slide 25 — Contrarian View
 
 Keep the Naval point. Valuable contrarian thinking is independent reasoning under pressure to conform, not reflexive disagreement.
 
 Land the three bullets: understand consensus, find the correct contrarian view, turn it into a tradeable decision.
 
-## Slide 23 — Context Moves AI Up The Chain
+## Slide 26 — Context Moves AI Up The Chain
 
 Explain one-off research as useful coverage. Context-aware workflow moves toward judgment and action.
 
 The competitive edge is not model access alone. It is the context architecture around judgment.
 
-## Slide 24 — Context Architecture
+## Slide 27 — Context Architecture
 
 Move through the rows quickly: source hierarchy, world model, variant lens, action standard.
 
 Transition: now make it tangible with Yan's demo.
 
-## Slide 25 — What To Watch In Yan's Demo
+## Slide 28 — What To Watch In Yan's Demo
 
 Keep this short. Yan will own the demo mechanics. Your job is to set the standard for what the audience should notice.
 
-Emphasize three learning points: language dispatches tools, context changes the output, and work leaves memory. The demo is not about a clever one-off automation; it is a preview of the habit the course trains.
+Emphasize three learning points: language dispatches tools, context changes the output, and work leaves memory. The demo is not about a clever one-off automation; it is a preview of the operating pattern behind the course.
 
-## Slide 26 — Part V
-
-Yan's demo is the reference case. The course value is helping PMs build comparable workflows around their own research, meetings, notes, and delegation patterns.
-
-## Slide 27 — Course Wedge
-
-Start with one real workflow. Prove individual utility first, then package the useful pieces into reusable skills and context files.
-
-## Slide 28 — Course Design
-
-Session 1: complete work loop. Session 2: package judgment as context. Session 3: turn work into infrastructure.
-
-## Slide 29 — PM AI Fluency Gaps
-
-Walk the five gaps quickly. The most important ones for this audience are full-task delegation and compounding memory.
-
-## Slide 30 — What Dymon Leaves With
-
-Describe this as a first operating layer: axiom library, PM context files, reusable workflow skills, context ledger pattern, team context architecture, and support loop.
-
-## Slide 31 — AI Is The New Excel
-
-Use Jay's analogy to make the learning path obvious. Excel became table stakes, but real modeling required training and practice. AI has the same shape.
-
-Land the three meanings: table stakes, learnable, deep craft.
-
-## Slide 32 — What It Means For PMs
-
-This is the useful piece from the archived version. Make the analogy operational: business people learned Excel through real models, repeated practice, and templates; PMs will learn AI through real workflows, failure diagnosis, skills, and context files.
-
-The purpose is to make AI feel accessible without making it feel trivial.
-
-## Slide 33 — Closing
+## Slide 29 — Closing
 
 End on operational compounding: fewer missed actions, fewer missed opportunities, and a context system that compounds with daily work.
