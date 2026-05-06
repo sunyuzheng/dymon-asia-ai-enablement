@@ -34,6 +34,16 @@ html, body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
+body.presenter-window {
+  overflow: auto;
+  background: #0f1827;
+}
+body.presenter-window .deck,
+body.presenter-window #prog,
+body.presenter-window #counter,
+body.presenter-window #hint {
+  display: none;
+}
 .deck { width: 100vw; height: 100vh; position: relative; overflow: hidden; background: var(--paper); }
 .slide {
   position: absolute;
@@ -70,6 +80,22 @@ html.booting .slide { transition: none !important; }
   padding: 22px;
 }
 .speaker-panel.open { display: flex; }
+body.presenter-window .speaker-panel {
+  display: flex;
+  inset: 0;
+  width: 100vw;
+  min-height: 100vh;
+  border: 0;
+  box-shadow: none;
+  background: #0f1827;
+  padding: 28px 34px;
+}
+body.presenter-window .speaker-body p {
+  font-size: 24px;
+  line-height: 1.48;
+}
+body.presenter-window .speaker-title { font-size: 28px; }
+body.presenter-window .speaker-next { font-size: 15px; }
 .speaker-head {
   display: flex;
   align-items: flex-start;
@@ -983,7 +1009,7 @@ p, li {
 </div>
 <div id="prog" style="width:3.45%"></div>
 <div id="counter">1 / 29</div>
-<div id="hint">← → navigate · S speaker notes</div>
+<div id="hint">← → navigate · S presenter notes</div>
 <aside id="speakerPanel" class="speaker-panel" aria-hidden="true">
   <div class="speaker-head">
     <div>
@@ -1009,6 +1035,10 @@ p, li {
   var total = slides.length;
   var cur = 0;
   var busy = false;
+  var isPresenter = new URLSearchParams(window.location.search).get("presenter") === "1";
+  var presenterWin = null;
+  var channel = "BroadcastChannel" in window ? new BroadcastChannel("dymon-speaker-notes") : null;
+  if (isPresenter) document.body.classList.add("presenter-window");
   var speakerNotes = [
 `Good morning. Today I want to make one argument.
 
@@ -1190,11 +1220,40 @@ At the strategic level, it means the judgment context of each PM and the firm st
     speakerPanel.setAttribute("aria-hidden", open ? "false" : "true");
     if (open) renderSpeaker();
   }
+  function broadcastState() {
+    if (!channel) return;
+    channel.postMessage({ type: "state", index: cur, total: total });
+  }
+  function requestGo(n) {
+    if (n < 0 || n >= total) return;
+    if (isPresenter && channel) channel.postMessage({ type: "go", index: n });
+    go(n);
+  }
+  function openPresenterWindow() {
+    var url = new URL(window.location.href);
+    url.searchParams.set("presenter", "1");
+    url.hash = "slide-" + (cur + 1);
+    presenterWin = window.open(url.toString(), "dymonPresenterNotes", "popup,width=760,height=980");
+    if (presenterWin) presenterWin.focus();
+    broadcastState();
+  }
+  if (channel) {
+    channel.onmessage = function (event) {
+      var data = event.data || {};
+      if (data.type === "go" && !isPresenter && typeof data.index === "number") {
+        go(data.index);
+      }
+      if (data.type === "state" && isPresenter && typeof data.index === "number" && data.index !== cur) {
+        go(data.index);
+      }
+    };
+  }
   function update() {
     document.getElementById("prog").style.width = (((cur + 1) / total) * 100).toFixed(2) + "%";
     document.getElementById("counter").textContent = (cur + 1) + " / " + total;
     window.location.hash = "slide-" + (cur + 1);
     renderSpeaker();
+    broadcastState();
   }
   function go(n) {
     if (busy || n === cur || n < 0 || n >= total) return;
@@ -1229,30 +1288,31 @@ At the strategic level, it means the judgment context of each PM and the firm st
     go(idx);
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "s" || e.key === "S") { e.preventDefault(); toggleSpeaker(); return; }
-    if (e.key === "Escape" && speakerPanel.classList.contains("open")) { e.preventDefault(); toggleSpeaker(false); return; }
-    if (["ArrowRight", "ArrowDown", "PageDown"].indexOf(e.key) !== -1 || e.code === "Space") { e.preventDefault(); go(cur + 1); }
-    if (["ArrowLeft", "ArrowUp", "PageUp"].indexOf(e.key) !== -1) { e.preventDefault(); go(cur - 1); }
-    if (e.key === "Home") { e.preventDefault(); go(0); }
-    if (e.key === "End") { e.preventDefault(); go(total - 1); }
+    if (e.key === "s" || e.key === "S") { e.preventDefault(); if (isPresenter) window.close(); else openPresenterWindow(); return; }
+    if (e.key === "Escape" && speakerPanel.classList.contains("open")) { e.preventDefault(); if (isPresenter) window.close(); else toggleSpeaker(false); return; }
+    if (["ArrowRight", "ArrowDown", "PageDown"].indexOf(e.key) !== -1 || e.code === "Space") { e.preventDefault(); requestGo(cur + 1); }
+    if (["ArrowLeft", "ArrowUp", "PageUp"].indexOf(e.key) !== -1) { e.preventDefault(); requestGo(cur - 1); }
+    if (e.key === "Home") { e.preventDefault(); requestGo(0); }
+    if (e.key === "End") { e.preventDefault(); requestGo(total - 1); }
   });
-  document.getElementById("speakerPrev").addEventListener("click", function () { go(cur - 1); });
-  document.getElementById("speakerNextBtn").addEventListener("click", function () { go(cur + 1); });
+  document.getElementById("speakerPrev").addEventListener("click", function () { requestGo(cur - 1); });
+  document.getElementById("speakerNextBtn").addEventListener("click", function () { requestGo(cur + 1); });
   document.getElementById("speakerReset").addEventListener("click", function () { startTime = Date.now(); speakerTimer.textContent = "00:00"; });
-  document.getElementById("speakerClose").addEventListener("click", function () { toggleSpeaker(false); });
+  document.getElementById("speakerClose").addEventListener("click", function () { if (isPresenter) window.close(); else toggleSpeaker(false); });
   setInterval(function () { speakerTimer.textContent = fmt(Date.now() - startTime); }, 1000);
   document.getElementById("deck").addEventListener("click", function (e) {
     if (e.target.closest("a, button")) return;
-    go(e.clientX > window.innerWidth * 0.25 ? cur + 1 : cur - 1);
+    requestGo(e.clientX > window.innerWidth * 0.25 ? cur + 1 : cur - 1);
   });
   var tx = 0;
   document.addEventListener("touchstart", function (e) { tx = e.touches[0].clientX; }, { passive: true });
   document.addEventListener("touchend", function (e) {
     var dx = tx - e.changedTouches[0].clientX;
-    if (Math.abs(dx) > 48) go(dx > 0 ? cur + 1 : cur - 1);
+    if (Math.abs(dx) > 48) requestGo(dx > 0 ? cur + 1 : cur - 1);
   }, { passive: true });
   bootFromHash();
   update();
+  if (isPresenter) toggleSpeaker(true);
 }());
 </script>
 </body>

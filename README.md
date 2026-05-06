@@ -118,8 +118,9 @@ Navigation:
 - Click right side to advance
 - Click left side to go back
 - Touch swipe on mobile
-- Press `S` to open or close the speaker-notes panel with timer and slide controls
-- Press `Esc` to close the speaker-notes panel
+- Press `S` in the main deck to open a separate presenter-notes window
+- Use the presenter-notes window for timer, speaker script, and slide controls
+- Press `Esc` in the presenter window to close it
 
 ## Deployment
 
