@@ -21,6 +21,16 @@ Usage note:
 
 ## Photographs
 
+### Instructors
+
+- Current slide 5 assets:
+  - `assets/instructor-yuzheng.png`
+  - `assets/instructor-yan.png`
+- Source deck:
+  `/Users/sunyuzheng/Desktop/superlinear/corp-training/tencent/Superlinear_x_IEG_20260315_v6.pptx`
+- Source slide: slide 3, instructor team page.
+- Usage note: use these paired transparent-background instructor portraits when the deck needs to introduce both Yuzheng Sun and Dr. Yan Wang together. Do not substitute random local headshots unless the instructor team visual direction changes.
+
 ### Superlinear Enterprise Training
 
 - Current slide 5 asset: `assets/doordash_speaker.jpg`

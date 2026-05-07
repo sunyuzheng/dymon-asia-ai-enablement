@@ -38,11 +38,13 @@ AI becomes powerful when those moves can be specified, inspected, and reused, in
 
 A quick word on why we are teaching this.
 
-Our vantage point is that we teach a very diverse, but frontier, group of people.
+This session is taught by two PhDs, but the credentials are only the starting point.
 
-Our students range from developers at OpenAI to business operators to college students. The surprising thing is that all of them benefit when the training is built around real work instead of tool demos.
+Yan and I both come from hands-on operating environments: Meta, Amazon, Tencent, Statsig, Adobe, Microsoft, and Samsara. Statsig was later acquired by OpenAI, and Yan has spent nearly 20 years in AI R&D.
 
-So rest assured: you are hearing this from actual builders who apply AI in practice and teach it to people in Silicon Valley.
+Our vantage point comes from the classroom as much as the resume. Superlinear Academy has more than 15,000 AI Builders community members and more than 3,000 paid AI Builders students. More than half are from frontier technology and FAANG companies.
+
+So you are hearing this from people who apply AI in practice, teach it to Silicon Valley practitioners, and see what actually changes day to day across technical and non-technical learners.
 
 If you want to see more public reviews after the session, the Maven page is linked here.
 
