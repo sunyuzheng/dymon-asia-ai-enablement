@@ -42,7 +42,7 @@ This session is taught by two PhDs, but the credentials are only the starting po
 
 Yan and I both come from hands-on operating environments: Meta, Amazon, Tencent, Statsig, Adobe, Microsoft, and Samsara. Statsig was later acquired by OpenAI, and Yan has spent nearly 20 years in AI R&D.
 
-Our vantage point comes from the classroom as much as the resume. Superlinear Academy has more than 15,000 AI Builders community members and more than 3,000 paid AI Builders students. The course is rated 4.9 out of 5 on Maven, and more than half of the paid students come from frontier technology and FAANG companies.
+Our vantage point comes from the classroom as much as the resume. Superlinear Academy has more than 15,000 AI Builders community members and more than 3,000 paid AI Builders students. The course is rated 5.0 out of 5 on Maven, and more than half of the paid students come from frontier technology and FAANG companies.
 
 We also do enterprise training and advisory work for teams like Tencent, Meituan, ByteDance, 1Password, Hover, Amazon, DoorDash, and Pinterest. So the pattern here is not only a public course. It is a repeated operating problem we see across technical teams, product teams, and business operators.
 
