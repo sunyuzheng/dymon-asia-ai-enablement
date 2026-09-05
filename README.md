@@ -2,12 +2,12 @@
 
 Working repository for the Dymon Asia AI enablement briefing deck and speaker notes.
 
-Private hosted copy:
+Live deck:
 
-- Protected preview: https://dymon-asia-ai-enablement-2zadqsi7g-yuzhengs-projects-9ae1e000.vercel.app
-- Speaker notes: append `/speaker-notes.md` to the protected preview URL
+- Production: https://dymon-asia-ai-enablement.vercel.app
+- Speaker notes: https://dymon-asia-ai-enablement.vercel.app/speaker-notes.md
 
-This repository and its hosted deck are restricted client materials. A separate contract permits purpose-limited private sharing with an intended counterparty; it does not permit public promotion, indexing, or treating Dymon as public client proof. Create a revocable Vercel Shareable Link for each approved sharing context instead of restoring a public production alias.
+This is the pre-contract Dymon Asia demo, approved for public access as a course reference.
 
 ## What This Is
 
@@ -126,13 +126,17 @@ Navigation:
 
 ## Deployment
 
-The project is hosted as a Vercel Preview protected by Vercel Authentication. Do not deploy it to Production or attach a public custom domain.
+The project is deployed on Vercel:
 
 ```bash
-vercel deploy --target=preview --yes
+vercel deploy --prod --yes
 ```
 
-Before sharing externally, verify the intended recipient and contract scope, then create a revocable Shareable Link from the protected deployment. Do not send the raw Preview URL: without the bypass link it is accessible only to the Vercel team.
+The current production alias is:
+
+```text
+https://dymon-asia-ai-enablement.vercel.app
+```
 
 ## Archive
 
